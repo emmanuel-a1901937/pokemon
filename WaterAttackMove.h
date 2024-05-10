@@ -7,7 +7,7 @@ using namespace std;
 class WaterAttackMove : public AttackMove {
   private: 
     void useMove(Pokemon* p1, Pokemon* p2) {
-      
+      if 
     }
 };
 

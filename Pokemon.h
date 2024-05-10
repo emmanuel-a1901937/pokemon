@@ -22,6 +22,14 @@ class Pokemon{
         std::string getName();
         int getHealth();
         void takeDamage(int damage);
+        int getAttack(); 
+        void setAttack(int newAttack);
+        int getDefence(); 
+        void setDefence(int newDefence); 
+        int getSpeed(); 
+        void setSpeed(int newSpeed); 
+        std::string getType(); 
+        bool isFainted(); 
 };
 
 

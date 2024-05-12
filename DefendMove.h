@@ -19,6 +19,8 @@ class DefendMove : public Move {
       int newDefence = p1->getDefence() + this->defenceEffect; 
       int newSpeed = p1->getSpeed() + this->speedEffect; 
 
+      // TODO: check if new attributes would be out of range 
+
       p1->setAttack(newAttack); // set new attributes
       p1->setDefence(newDefence);
       p1->setSpeed(newSpeed); 

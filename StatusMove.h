@@ -23,6 +23,9 @@ class StatusMove : public Move {
         int newDefence = p2->getDefence() + this->defenceEffect; 
         int newSpeed = p2->getSpeed() + this->speedEffect; 
 
+        // TODO: check if new attributes would be out of range 
+
+
         p2->setAttack(newAttack); // set new attributes
         p2->setDefence(newDefence);
         p2->setSpeed(newSpeed); 

@@ -10,6 +10,11 @@ class StatusMove : public Move {
     int defenceEffect; 
     int speedEffect; 
     int accuracy; 
+
+  public: 
+    void useMove(Pokemon* p1, Pokemon* p2) {
+      
+    }
 };
 
 #endif

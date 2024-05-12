@@ -22,6 +22,17 @@ class DefendMove : public Move {
       p1->setAttack(newAttack); // set new attributes
       p1->setDefence(newDefence);
       p1->setSpeed(newSpeed); 
+
+      // print new attributes  
+      if (attackEffect != 0) { // only print messages if the stat has been affected by the StatusMove
+        cout << p1->getName() << "'s Attack has been affected by " << attackEffect << ". New Attack stat is " << p1->getAttack() << endl; 
+      }
+      if (defenceEffect != 0) { // only print messages if the stat has been affected by the StatusMove
+        cout << p1->getName() << "'s Defence has been affected by " << defenceEffect << ". New Defence stat is " << p1->getDefence() << endl; 
+      }
+      if (speedEffect != 0) { // only print messages if the stat has been affected by the StatusMove
+        cout << p1->getName() << "'s Speed has been affected by " << speedEffect << ". New Speed stat is " << p1->getSpeed() << endl; 
+      }
     }
 };
 

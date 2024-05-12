@@ -10,7 +10,7 @@ class WaterAttackMove : public AttackMove {
       float bonus = 1; 
 
       if (p2->getType() == "Fire") {
-        bonus = 1.5; // super effective bonus applied 
+        bonus = 1.5; // super effective bonus applied if WaterAttackMove used against FirePokemon
       }
 
       // calculate damage dealt 

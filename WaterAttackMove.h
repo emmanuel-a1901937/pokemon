@@ -5,7 +5,7 @@
 using namespace std; 
 
 class WaterAttackMove : public AttackMove {
-  private: 
+  public: 
     void useMove(Pokemon* p1, Pokemon* p2) {
       // determine if attack hits based on accuracy attribute 
       srand(static_cast<unsigned int>(time(0))); // seed rng with the current time

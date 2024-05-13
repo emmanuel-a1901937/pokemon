@@ -7,6 +7,8 @@ using namespace std;
 class WaterAttackMove : public AttackMove {
   public: 
     void useMove(Pokemon* p1, Pokemon* p2) {
+      cout << p1->getName() << " used a Water Attack on " << p2->getName() << endl; 
+
       // determine if attack hits based on accuracy attribute 
       srand(static_cast<unsigned int>(time(0))); // seed rng with the current time
       int randomNumber = rand() % 100; // generate a random number between 0 and 99
@@ -24,13 +26,12 @@ class WaterAttackMove : public AttackMove {
         float p2DefenceStat = p2->getDefence(); 
         float totalDamage = (attackPower * (p1AttackStat/p2DefenceStat)) * bonus; 
 
-
         p2->takeDamage(totalDamage); // reduce p2 health 
         cout << p1->getName() << " successfully dealt " << totalDamage <<  " damage to " << p2->getName() << endl; // print successful attack message 
       } 
       
-      else { // no damage is dealt otherwise 
-        cout << p1->getName() << " did not deal any damage to " << p2->getName() << endl; // print failed attack message
+      else { // if attack does not hit (based on randomNumber)
+        cout << p1->getName() << "'s Attack missed!" << endl; // print failed attack message
       }    
     }
 };

@@ -18,27 +18,35 @@ class StatusMove : public Move {
       int randomNumber = rand() % 100; // generate a random number between 0 and 99
 
       if (randomNumber < accuracy) { // status move hits if randomNumber falls below the accuracy attribute 
-        // apply new attributes to p1 
-        int newAttack = p2->getAttack()  + this->attackEffect; // calculate new attributes 
-        int newDefence = p2->getDefence() + this->defenceEffect; 
-        int newSpeed = p2->getSpeed() + this->speedEffect; 
 
-        // TODO: check if new attributes would be out of range 
+        int lowerLimit = 30; // stats must fall between 30 and 90 
+        int upperLimit = 90; 
 
-
-        p2->setAttack(newAttack); // set new attributes
-        p2->setDefence(newDefence);
-        p2->setSpeed(newSpeed); 
-
-        // print new stats 
-        if (attackEffect != 0) { // only print messages if the stat has been affected by the StatusMove
-          cout << p2->getName() << "'s Attack has been affected by " << attackEffect << ". New Attack stat is " << p2->getAttack() << endl; 
+        // apply Attack effect
+        if (attackEffect != 0) { // if there is a change in Attack stat
+          int newAttack = p2->getAttack()  + this->attackEffect; // calculate new Attack stat
+          if (newAttack > lowerLimit && newAttack < upperLimit) { // if newAttack falls within valid range 
+            p2->setAttack(newAttack); // update Attack stat 
+            cout << p2->getName() << "'s Attack has been affected by " << attackEffect << ". New Attack stat is " << p2->getAttack() << endl; // print message 
+          }
         }
-        if (defenceEffect != 0) { // only print messages if the stat has been affected by the StatusMove
-          cout << p2->getName() << "'s Defence has been affected by " << defenceEffect << ". New Defence stat is " << p2->getDefence() << endl; 
+
+        // apply Defence effect
+        if (defenceEffect != 0) {
+          int newDefence = p2->getDefence()  + this->defenceEffect; // calculate new Defence stat
+          if (newDefence > lowerLimit && newDefence < upperLimit) { // if newDefence falls within valid range 
+            p2->setDefence(newDefence); // update Defence stat 
+            cout << p2->getName() << "'s Defence has been affected by " << defenceEffect << ". New Defence stat is " << p2->getDefence() << endl; // print message 
+          }
         }
-        if (speedEffect != 0) { // only print messages if the stat has been affected by the StatusMove
-          cout << p2->getName() << "'s Speed has been affected by " << speedEffect << ". New Speed stat is " << p2->getSpeed() << endl; 
+
+        // apply Speed effect
+        if (speedEffect != 0) {
+          int newSpeed = p2->getSpeed()  + this->speedEffect; // calculate new Speed stat
+          if (newSpeed > lowerLimit && newSpeed < upperLimit) { // if newSpeed falls within valid range 
+            p2->setSpeed(newSpeed); // update Speed stat 
+            cout << p2->getName() << "'s Speed has been affected by " << speedEffect << ". New Speed stat is " << p2->getSpeed() << endl; // print message 
+          }
         }
       }
 

@@ -21,42 +21,42 @@ class StatusMove : public Move {
 
       if (randomNumber < accuracy) { // status move hits if randomNumber falls below the accuracy attribute 
 
-        int lowerLimit = 30; // stats must fall between 30 and 90 
-        int upperLimit = 90; 
-
         // apply Attack effect
         if (attackEffect != 0) { // if there is a change in Attack stat
           int newAttack = p2->getAttack()  + this->attackEffect; // calculate new Attack stat
-          if (newAttack > lowerLimit && newAttack < upperLimit) { // if newAttack falls within valid range 
+          if (newAttack > 0) { // ensure newAttack is above 0
             p2->setAttack(newAttack); // update Attack stat 
             cout << p2->getName() << "'s Attack has been affected by " << attackEffect << ". New Attack stat is " << p2->getAttack() << endl; // print message 
           }
-          else { // newAttack does not fall within valid range 
-            cout << p2->getName() << "'s Attack stat cannot be changed at this point in time!" << endl; 
+          else { // if newAttack would be less than 1
+            p2->setAttack(1); // set newAttack to 1
+            cout << p2->getName() << "'s Attack has been affected by " << attackEffect << ". New Attack stat is " << p2->getAttack() << endl; // print message 
           }
         }
 
         // apply Defence effect
         if (defenceEffect != 0) {
           int newDefence = p2->getDefence()  + this->defenceEffect; // calculate new Defence stat
-          if (newDefence > lowerLimit && newDefence < upperLimit) { // if newDefence falls within valid range 
+          if (newDefence > 0) { // if newDefence is above 0
             p2->setDefence(newDefence); // update Defence stat 
             cout << p2->getName() << "'s Defence has been affected by " << defenceEffect << ". New Defence stat is " << p2->getDefence() << endl; // print message 
           }
-          else { // newDefence does not fall within valid range 
-            cout << p2->getName() << "'s Defence stat cannot be changed at this point in time!" << endl; 
+          else { // if newDefence would be less than 1
+            p2->setDefence(1); // set newDefence to 1
+            cout << p2->getName() << "'s Defence has been affected by " << defenceEffect << ". New Defence stat is " << p2->getDefence() << endl; // print message 
           }
         }
 
         // apply Speed effect
         if (speedEffect != 0) {
           int newSpeed = p2->getSpeed()  + this->speedEffect; // calculate new Speed stat
-          if (newSpeed > lowerLimit && newSpeed < upperLimit) { // if newSpeed falls within valid range 
+          if (newSpeed > 0) { // if newSpeed is above 0
             p2->setSpeed(newSpeed); // update Speed stat 
             cout << p2->getName() << "'s Speed has been affected by " << speedEffect << ". New Speed stat is " << p2->getSpeed() << endl; // print message 
           }
-          else { // newSpeed does not fall within valid range 
-            cout << p2->getName() << "'s Speed stat cannot be changed at this point in time!" << endl; 
+          else { // if newSpeed would be less than 1
+            p2->setSpeed(1); // set newSpeed to 1
+            cout << p2->getName() << "'s Speed has been affected by " << speedEffect << ". New Speed stat is " << p2->getSpeed() << endl; // print message 
           }
         }
       }

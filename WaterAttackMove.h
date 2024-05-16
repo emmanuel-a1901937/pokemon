@@ -6,6 +6,10 @@ using namespace std;
 
 class WaterAttackMove : public AttackMove {
   public: 
+    WaterAttackMove() {
+      
+    }
+
     void useMove(Pokemon* p1, Pokemon* p2) {
       cout << p1->getName() << " used a Water Attack on " << p2->getName() << endl; 
 

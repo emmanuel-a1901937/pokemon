@@ -12,7 +12,10 @@ GrassPokemon::GrassPokemon(string names) {
     defence = rand() % 90 + 70;
     speed = rand() % 90 + 70;
     fainted = false;
-
+    
+    // create list of possible moves 
+    // possible attacks 
+    possibleAttacks.push_back(new GrassAttackMove()); 
 }
 
 void GrassPokemon::setMoves(GrassAttackMove* G1, GrassAttackMove* G2, DefendMove* D1, StatusMove* S1) {

@@ -1,12 +1,12 @@
 #ifndef GAME_H
 #define GAME_H
 
-#include "Player.h"
+#include "Trainer.h"
 #include "Computer.h"
 
 class Game{
     protected:
-        Player player;
+        Trainer player;
         Computer computer;
         int phase;
     public:

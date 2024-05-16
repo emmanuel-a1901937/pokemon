@@ -1,4 +1,4 @@
-#include <Vector>
+#include <vector>
 #include "FirePokemon.h"
 #include <iostream>
 #include <string>

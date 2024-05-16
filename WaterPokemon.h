@@ -1,6 +1,6 @@
 #ifndef WATERPOKEMON_H
 #define WATERPOKEMON_H
-#include <Vector>
+#include <vector>
 #include "Pokemon.h"
 #include "WaterAttackMove.h"
 #include "DefendMove.h"

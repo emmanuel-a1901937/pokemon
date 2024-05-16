@@ -1,11 +1,11 @@
 #ifndef FIREPOKEMON_H
 #define FIREPOKEMON_H
-#include <Vector>
+#include <vector>
 #include "Pokemon.h"
 #include "FireAttackMove.h"
 #include "DefendMove.h"
 #include "StatusMove.h"
-#include <String>
+#include <string>
 using namespace std; 
 
 class FirePokemon : public Pokemon {

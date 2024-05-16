@@ -1,6 +1,6 @@
 #ifndef GRASSPOKEMON_H
 #define GRASSPOKEMON_H
-#include <Vector>
+#include <vector>
 #include "Pokemon.h"
 #include "GrassAttackMove.h"
 #include "DefendMove.h"

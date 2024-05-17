@@ -5,8 +5,6 @@
 #include <iostream> 
 using namespace std; 
 
-#include "Pokemon.h"
-
 class Move {
   protected: 
     string name; 

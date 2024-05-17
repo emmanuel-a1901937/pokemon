@@ -111,3 +111,129 @@ void GrassPokemon::setMoves() {
     Move* s1 = (possibleStatus[r4]); // select status move from possibleStatus 
     this->moves.push_back(s1);
 }
+
+void GrassPokemon::useAttack(GrassAttackMove* move, Pokemon* targetPokemon) {
+    cout << this->name << " used Grass Attack " << move->getName() << " on " << targetPokemon->getName() << endl; 
+
+      // determine if attack hits based on accuracy attribute 
+      srand(static_cast<unsigned int>(time(0))); // seed rng with the current time
+      int randomNumber = rand() % 100; // generate a random number between 0 and 99
+
+      if (randomNumber < move->getAccuracy()) { // attack hits if randomNumber falls below the accuracy attribute 
+        float bonus = 1; 
+
+        if (targetPokemon->getType() == "Water") {
+          bonus = 1.5; // super effective bonus applied if FireAttackMove used against WaterPokemon
+        }
+
+        // calculate damage dealt 
+        float attackPower = move->getDamage(); 
+        float actingPokemonAttackStat = this->attack; 
+        float targetPokemonDefenceStat = targetPokemon->getDefence(); 
+        float totalDamage = (attackPower * (actingPokemonAttackStat/targetPokemonDefenceStat)) * bonus; 
+
+        targetPokemon->takeDamage(totalDamage); // reduce p2 health 
+        cout << this->name << " successfully dealt " << totalDamage <<  " damage to " << targetPokemon->getName() << endl; // print successful attack message 
+      } 
+      
+      else { // if attack does not hit (based on randomNumber)
+        cout << this->name << "'s Attack missed!" << endl; // print failed attack message
+      }    
+}
+
+void GrassPokemon::useDefend(DefendMove* move) {
+    cout << this->name << " used Defend Move " << move->getName() << "!" << endl; // print message to let user know what move was used
+
+      // apply Attack effect
+      if (move->getAttackEffect() != 0) { // if there is a change in Attack stat
+        int newAttack = this->attack  + move->getAttackEffect(); // calculate new Attack stat
+        if (newAttack > 0) { // if newAttack is above 0
+          setAttack(newAttack); // update Attack stat 
+          cout << this->name << "'s Attack has been affected by " << move->getAttackEffect() << ". New Attack stat is " << attack << endl; // print message 
+        }
+        else { // if newAttack would be less than 1
+          setAttack(1); // set newAttack to 1
+          cout << this->name << "'s Attack has been affected by " << move->getAttackEffect() << ". New Attack stat is " << attack << endl; // print message 
+        }
+      }
+
+      // apply Defence effect
+      if (move->getDefenceEffect() != 0) { // if there is a change in Defence stat
+        int newDefence = this->defence  + move->getDefenceEffect(); // calculate new Defence stat
+        if (newDefence > 0) { // if newDefence is above 0
+          setDefence(newDefence); // update Defence stat 
+          cout << this->name << "'s Defence has been affected by " << move->getDefenceEffect() << ". New Defence stat is " << defence << endl; // print message 
+        }
+        else { // if newDefence would be less than 1
+          setDefence(1); // set newDefence to 1
+          cout << this->name << "'s Defence has been affected by " << move->getDefenceEffect() << ". New Defence stat is " << defence << endl; // print message 
+        }
+      }
+
+      // apply Speed effect
+      if (move->getSpeedEffect() != 0) { // if there is a change in Speed stat
+        int newSpeed = this->speed  + move->getSpeedEffect(); // calculate new Speed stat
+        if (newSpeed > 0) { // if newSpeed is above 0
+          setSpeed(newSpeed); // update Speed stat 
+          cout << this->name << "'s Speed has been affected by " << move->getSpeedEffect() << ". New Speed stat is " << speed << endl; // print message 
+        }
+        else { // if newSpeed would be less than 1
+          setSpeed(1); // set newSpeed to 1
+          cout << this->name << "'s Speed has been affected by " << move->getSpeedEffect() << ". New Speed stat is " << speed << endl; // print message 
+        }
+      }
+}
+
+void GrassPokemon::useStatus(StatusMove* move, Pokemon* targetPokemon) {
+    cout << name << " used Status Move " << move->getName() << " against " << targetPokemon->getName() << "!" << endl; // print message to let user know what move was used
+
+    // determine if status move hits based on accuracy attribute 
+    srand(static_cast<unsigned int>(time(0))); // seed rng with the current time
+    int randomNumber = rand() % 100; // generate a random number between 0 and 99
+
+    if (randomNumber < move->getAccuracy()) { // status move hits if randomNumber falls below the accuracy attribute 
+
+    // apply Attack effect
+    if (move->getAttackEffect() != 0) { // if there is a change in Attack stat
+        int newAttack = targetPokemon->getAttack()  + move->getAttackEffect(); // calculate new Attack stat
+        if (newAttack > 0) { // ensure newAttack is above 0
+        targetPokemon->setAttack(newAttack); // update Attack stat 
+        cout << targetPokemon->getName() << "'s Attack has been affected by " << move->getAttackEffect() << ". New Attack stat is " << targetPokemon->getAttack() << endl; // print message 
+        }
+        else { // if newAttack would be less than 1
+        targetPokemon->setAttack(1); // set newAttack to 1
+        cout << targetPokemon->getName() << "'s Attack has been affected by " << move->getAttackEffect() << ". New Attack stat is " << targetPokemon->getAttack() << endl; // print message 
+        }
+    }
+
+    // apply Defence effect
+    if (move->getDefenceEffect() != 0) {
+        int newDefence = targetPokemon->getDefence()  + move->getDefenceEffect(); // calculate new Defence stat
+        if (newDefence > 0) { // if newDefence is above 0
+        targetPokemon->setDefence(newDefence); // update Defence stat 
+        cout << targetPokemon->getName() << "'s Defence has been affected by " << move->getDefenceEffect() << ". New Defence stat is " << targetPokemon->getDefence() << endl; // print message 
+        }
+        else { // if newDefence would be less than 1
+        targetPokemon->setDefence(1); // set newDefence to 1
+        cout << targetPokemon->getName() << "'s Defence has been affected by " << move->getDefenceEffect() << ". New Defence stat is " << targetPokemon->getDefence() << endl; // print message 
+        }
+    }
+
+    // apply Speed effect
+    if (move->getSpeedEffect() != 0) {
+        int newSpeed = targetPokemon->getSpeed()  + move->getSpeedEffect(); // calculate new Speed stat
+        if (newSpeed > 0) { // if newSpeed is above 0
+        targetPokemon->setSpeed(newSpeed); // update Speed stat 
+        cout << targetPokemon->getName() << "'s Speed has been affected by " << move->getSpeedEffect() << ". New Speed stat is " << targetPokemon->getSpeed() << endl; // print message 
+        }
+        else { // if newSpeed would be less than 1
+        targetPokemon->setSpeed(1); // set newSpeed to 1
+        cout << targetPokemon->getName() << "'s Speed has been affected by " << move->getSpeedEffect() << ". New Speed stat is " << targetPokemon->getSpeed() << endl; // print message 
+        }
+    }
+    }
+
+    else { // if Status move did not hit 
+    cout << name << "'s Status Move was ineffective!" << endl; 
+    }
+}

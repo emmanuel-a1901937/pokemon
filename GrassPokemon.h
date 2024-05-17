@@ -15,6 +15,9 @@ protected:
 public: 
     GrassPokemon(string names);
     void setMoves(); 
+    void useAttack(GrassAttackMove* move, Pokemon* targetPokemon);
+    void useDefend(DefendMove* move); 
+    void useStatus(StatusMove* move, Pokemon* targetPokemon);
 };
 
 #endif

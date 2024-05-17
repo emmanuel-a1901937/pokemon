@@ -15,6 +15,9 @@ class WaterPokemon : public Pokemon {
   public: 
     WaterPokemon(string names);
     void setMoves(); 
+    void useAttack(WaterAttackMove* move, Pokemon* targetPokemon);
+    void useDefend(DefendMove* move); 
+    void useStatus(StatusMove* move, Pokemon* targetPokemon);
 };
 
 #endif

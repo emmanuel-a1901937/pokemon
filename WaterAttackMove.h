@@ -6,8 +6,11 @@ using namespace std;
 
 class WaterAttackMove : public AttackMove {
   public: 
-    WaterAttackMove() {
-      
+    WaterAttackMove(string _name, string _type, int _damage, int _accuracy) {
+      this->name = _name; 
+      this->type = _type; 
+      this->damage = _damage; 
+      this->accuracy = _accuracy; 
     }
 
     void useMove(Pokemon* p1, Pokemon* p2) {

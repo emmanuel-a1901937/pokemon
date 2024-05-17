@@ -6,6 +6,13 @@ using namespace std;
 
 class FireAttackMove : public AttackMove {
   public: 
+    FireAttackMove(string _name, string _type, int _damage, int _accuracy) {
+      this->name = _name; 
+      this->type = _type; 
+      this->damage = _damage; 
+      this->accuracy = _accuracy; 
+    }
+
     void useMove(Pokemon* p1, Pokemon* p2) {
       cout << p1->getName() << " used a Fire Attack on " << p2->getName() << endl; 
 

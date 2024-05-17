@@ -16,9 +16,7 @@ class FirePokemon : public Pokemon {
 
   public:
     FirePokemon(string names);
-    void setMoves(FireAttackMove* F1, FireAttackMove* F2, DefendMove* D1, StatusMove* S1) {
-      
-    }
+    void setMoves(); 
 };
 
 #endif

@@ -2,7 +2,7 @@
 #define POKEMON_H
 
 #include "Move.h"
-
+#include <random>
 #include <string>
 #include <vector>
 

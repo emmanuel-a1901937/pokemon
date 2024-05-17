@@ -73,9 +73,25 @@ FirePokemon::FirePokemon(string names) {
     possibleStatus.push_back(s6);
     possibleStatus.push_back(s7);
     possibleStatus.push_back(s8);
+
+    setMoves();
 }
 
-void FirePokemon::setMoves(FireAttackMove* F1, FireAttackMove* F2, DefendMove* D1, StatusMove* S1) {
+void FirePokemon::setMoves() {
+    // random number generator 
+    random_device rd; // Seed with a real random value, if available
+
+    mt19937 gen(rd()); // Standard mersenne_twister_engine seeded with rd()
+    uniform_int_distribution<> distrib(0, 9); // Choose a random number between 0 and 9
+
+    // pick random attack move
+    int r1 = distrib(gen); // random number 
+
+    // pick random defend move 
+
+    // pick random status move 
+
+
     vector<FireAttackMove*> FA(2);
     FA.push_back(F1);
     FA.push_back(F2);

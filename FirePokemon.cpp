@@ -78,28 +78,39 @@ FirePokemon::FirePokemon(string names) {
 }
 
 void FirePokemon::setMoves() {
-    // random number generator 
+    // random number generator from 0-9
     random_device rd; // Seed with a real random value, if available
 
     mt19937 gen(rd()); // Standard mersenne_twister_engine seeded with rd()
     uniform_int_distribution<> distrib(0, 9); // Choose a random number between 0 and 9
 
     // pick random attack move
-    int r1 = distrib(gen); // random number 
+    int r1 = distrib(gen); // random number 1
+    int r2 = distrib(gen); // random number 2
+    while (r2 == r1) {
+        r2 = distrib(gen); // ensure r2 != r1
+    }
+    Move* a1 = (possibleAttacks[r1]); // select first attack from possibleAttacks 
+    Move* a2 = (possibleAttacks[r2]); // select second attack from possibleAttacks 
+    this->moves.push_back(a1); 
+    this->moves.push_back(a2);
+
+
+    // random number generator 
+    random_device rd; // Seed with a real random value, if available
+
+    mt19937 gen(rd()); // Standard mersenne_twister_engine seeded with rd()
+    uniform_int_distribution<> distrib(0, 9); // Choose a random number between 0 and 7
+
 
     // pick random defend move 
+    int r3 = distrib(gen);
+    Move* d1 = (possibleDefense[r3]); // select defend move from possibleDefence 
+    this->moves.push_back(d1);
 
     // pick random status move 
-
-
-    vector<FireAttackMove*> FA(2);
-    FA.push_back(F1);
-    FA.push_back(F2);
-    possibleAttacks = FA;
-    vector<DefendMove*> D(1);
-    D.push_back(D1);
-    possibleDefense = D;
-    vector<StatusMove*> S(1);
-    S.push_back(S1);
+    int r4 = distrib(gen); 
+    Move* s1 = (possibleStatus[r4]); // select status move from possibleStatus 
+    this->moves.push_back(s1);
 }
 

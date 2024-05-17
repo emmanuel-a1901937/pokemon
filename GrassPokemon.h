@@ -14,9 +14,7 @@ protected:
     vector<StatusMove*> possibleStatus;
 public: 
     GrassPokemon(string names);
-    void setMoves(GrassAttackMove* G1, GrassAttackMove* G2, DefendMove* D1, StatusMove* S1) {
-      
-    }
+    void setMoves(); 
 };
 
 #endif

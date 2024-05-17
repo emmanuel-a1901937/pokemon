@@ -14,9 +14,7 @@ class WaterPokemon : public Pokemon {
     vector<StatusMove*> possibleStatus;
   public: 
     WaterPokemon(string names);
-    void setMoves(WaterAttackMove* W1, WaterAttackMove* W2, DefendMove* D1, StatusMove* S1) {
-      
-    }
+    void setMoves(); 
 };
 
 #endif

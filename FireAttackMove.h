@@ -13,6 +13,18 @@ class FireAttackMove : public AttackMove {
       this->accuracy = _accuracy; 
     }
 
+    string getName() {
+      return name; 
+    }
+
+    int getDamage() {
+      return damage; 
+    }
+
+    int getAccuracy() {
+      return accuracy; 
+    }
+
     void useMove(Pokemon* p1, Pokemon* p2) {
       cout << p1->getName() << " used a Fire Attack on " << p2->getName() << endl; 
 

@@ -19,6 +19,22 @@ class DefendMove : public Move {
       speedEffect = _speedEffect; 
     }
 
+    string getName() {
+      return name; 
+    }
+
+    int getAttackEffect() {
+      return attackEffect; 
+    }
+
+    int getDefenceEffect() {
+      return defenceEffect; 
+    }
+
+    int getSpeedEffect() {
+      return speedEffect; 
+    }
+
     void useMove(Pokemon* p1, Pokemon* p2) {
       // Note: p2 is not used since DefendMove is used on itself 
 

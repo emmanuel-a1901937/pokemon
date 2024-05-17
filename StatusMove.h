@@ -21,6 +21,26 @@ class StatusMove : public Move {
       accuracy = _accuracy; 
     }
 
+    string getName() {
+      return name; 
+    }
+
+    int getAttackEffect() {
+      return attackEffect; 
+    }
+
+    int getDefenceEffect() {
+      return defenceEffect; 
+    }
+
+    int getSpeedEffect() {
+      return speedEffect; 
+    }
+
+    int getAccuracy() {
+      return accuracy; 
+    }
+
     void useMove(Pokemon* p1, Pokemon* p2) {
       cout << p1->getName() << " has used Status Move " << this->name << "!" << endl; // print message to let user know what move was used
 

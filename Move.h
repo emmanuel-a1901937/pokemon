@@ -11,9 +11,6 @@ class Move {
   protected: 
     string name; 
     string type; 
-
-  public: 
-    virtual void useMove(Pokemon* p1, Pokemon* p2) = 0; 
 };
 
 #endif

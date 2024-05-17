@@ -9,6 +9,7 @@
 void Trainer::addPokemon(){
     for (int i = 0; i < 3; i++){
         int choice;
+        std::string name;
         std::cout << "What type of pokemon do you want? (1 = Fire, 2 = Water, 3 = Grass)" << std::endl;
         std::cin >> choice;
 
@@ -18,16 +19,18 @@ void Trainer::addPokemon(){
             std::cin >> choice;
         }
 
+        std::cout << "What would you like to call your Pokemon?" << std::endl;
+        std::cin >> name;
+
         switch (choice){
         case 1:
-            //Need to add functionality to choose a name (thats why there is an error, constructor requires a name)
-            party.push_back(new FirePokemon);
+            party.push_back(new FirePokemon(name));
             break;
         case 2:
-            party.push_back(new WaterPokemon);
+            party.push_back(new WaterPokemon(name));
             break;
         case 3:
-            party.push_back(new GrassPokemon);
+            party.push_back(new GrassPokemon(name));
             break;
         }
     }

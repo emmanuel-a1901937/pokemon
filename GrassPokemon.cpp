@@ -55,7 +55,22 @@ GrassPokemon::GrassPokemon(string names) {
     possibleDefense.push_back(d8);
 
     // possible status 
-
+    StatusMove* s1 = new StatusMove("BreakBlade", "Grass", -30, 0, 0, 90); // reduces attack 
+    StatusMove* s2 = new StatusMove("ShieldBreaker", "Grass", 0, -30 ,0, 90); // reduces defence 
+    StatusMove* s3 = new StatusMove("StickyFeet", "Grass", 0, 0, -30, 90); // reduces speed 
+    StatusMove* s4 = new StatusMove("Infatuate", "Grass", -60, 40, 0, 90); // reduces attack, ups defence 
+    StatusMove* s5 = new StatusMove("Taunt", "Grass", 40, -60, 0, 90); // reduces defence, ups attack 
+    StatusMove* s6 = new StatusMove("IronBoots", "Grass", 0, 40, -60, 90); // reduces speed, ups defence
+    StatusMove* s7 = new StatusMove("SlipperySlippers", "Grass", 0, -60, 40, 90); // reduces defence, ups speed
+    StatusMove* s8 = new StatusMove("LilKnives", "Grass", -60, 0, 40, 90); // reduces attack, ups speed
+    possibleStatus.push_back(s1);
+    possibleStatus.push_back(s2);
+    possibleStatus.push_back(s3);
+    possibleStatus.push_back(s4);
+    possibleStatus.push_back(s5);
+    possibleStatus.push_back(s6);
+    possibleStatus.push_back(s7);
+    possibleStatus.push_back(s8);
 }
 
 void GrassPokemon::setMoves(GrassAttackMove* G1, GrassAttackMove* G2, DefendMove* D1, StatusMove* S1) {

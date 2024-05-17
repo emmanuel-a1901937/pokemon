@@ -54,7 +54,22 @@ WaterPokemon::WaterPokemon(string names) {
     possibleDefense.push_back(d8);
 
     // possible status 
-
+    StatusMove* s1 = new StatusMove("BreakBlade", "Water", -30, 0, 0, 90); // reduces attack 
+    StatusMove* s2 = new StatusMove("ShieldBreaker", "Water", 0, -30 ,0, 90); // reduces defence 
+    StatusMove* s3 = new StatusMove("StickyFeet", "Water", 0, 0, -30, 90); // reduces speed 
+    StatusMove* s4 = new StatusMove("Infatuate", "Water", -60, 40, 0, 90); // reduces attack, ups defence 
+    StatusMove* s5 = new StatusMove("Taunt", "Water", 40, -60, 0, 90); // reduces defence, ups attack 
+    StatusMove* s6 = new StatusMove("IronBoots", "Water", 0, 40, -60, 90); // reduces speed, ups defence
+    StatusMove* s7 = new StatusMove("SlipperySlippers", "Water", 0, -60, 40, 90); // reduces defence, ups speed
+    StatusMove* s8 = new StatusMove("LilKnives", "Water", -60, 0, 40, 90); // reduces attack, ups speed
+    possibleStatus.push_back(s1);
+    possibleStatus.push_back(s2);
+    possibleStatus.push_back(s3);
+    possibleStatus.push_back(s4);
+    possibleStatus.push_back(s5);
+    possibleStatus.push_back(s6);
+    possibleStatus.push_back(s7);
+    possibleStatus.push_back(s8);
 }
 
 void WaterPokemon::setMoves(WaterAttackMove* W1, WaterAttackMove* W2, DefendMove* D1, StatusMove* S1) {

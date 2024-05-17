@@ -98,7 +98,7 @@ void GrassPokemon::setMoves() {
     random_device rd; // Seed with a real random value, if available
 
     mt19937 gen(rd()); // Standard mersenne_twister_engine seeded with rd()
-    uniform_int_distribution<> distrib(0, 9); // Choose a random number between 0 and 7
+    uniform_int_distribution<> distrib(0, 7); // Choose a random number between 0 and 7
 
 
     // pick random defend move 

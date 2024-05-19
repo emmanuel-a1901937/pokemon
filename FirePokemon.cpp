@@ -95,21 +95,20 @@ void FirePokemon::setMoves() {
     this->moves.push_back(a1); 
     this->moves.push_back(a2);
 
-
-    // random number generator 
-    random_device rd; // Seed with a real random value, if available
-
-    mt19937 gen(rd()); // Standard mersenne_twister_engine seeded with rd()
-    uniform_int_distribution<> distrib(0, 7); // Choose a random number between 0 and 7
-
-
     // pick random defend move 
     int r3 = distrib(gen);
+    while (r3 > 7) { // ensure r3 is between 0 and 7 
+      r3 = distrib(gen);
+    }
     Move* d1 = (possibleDefense[r3]); // select defend move from possibleDefence 
     this->moves.push_back(d1);
 
     // pick random status move 
-    int r4 = distrib(gen); 
+    // ensure r4 is between 0 and 7 
+    int r4 = distrib(gen);
+    while (r4 > 7) { // ensure r4 is between 0 and 7 
+      r4 = distrib(gen);
+    }
     Move* s1 = (possibleStatus[r4]); // select status move from possibleStatus 
     this->moves.push_back(s1);
 }

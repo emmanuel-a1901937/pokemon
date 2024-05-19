@@ -7,7 +7,10 @@ using namespace std;
 #include "GrassAttackMove.h"
 #include "DefendMove.h"
 #include "StatusMove.h"
-#include "Pokemon.h"
+#include "FirePokemon.h"
+#include "WaterPokemon.h"
+#include "GrassPokemon.h"
+
 
 int main() {
   FireAttackMove* a1 = new FireAttackMove("BlazingComet", "Fire", 20, 80);

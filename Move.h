@@ -9,6 +9,9 @@ class Move {
   protected: 
     string name; 
     string type; 
+
+  public:
+    virtual void f(); 
 };
 
 #endif

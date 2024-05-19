@@ -68,20 +68,23 @@ void Game::playerTurn(){
 
     // Switch case to activate correct move
     switch (choice){
+        Pokemon* playerPokemon = player.getActivePokemon(); 
+        Pokemon* computerPokemon = computer.getActivePokemon(); 
         case 1:
-            // use the move at index 0
-            player.getActivePokemon()->getMoves()[0]->useMove(player.getActivePokemon(), computer.getActivePokemon());
+            // use the move at index 0 (attack1)
+            Move* a1 = playerPokemon->getMoves()[0];
+            playerPokemon->useAttack(a1, computerPokemon);
             break;
         case 2:
-            //use the move at index 1
+            //use the move at index 1 (attack2)
             player.getActivePokemon()->getMoves()[1]->useMove(player.getActivePokemon(), computer.getActivePokemon());
             break;
         case 3:
-            //use the move at index 2
+            //use the move at index 2 (defend)
             player.getActivePokemon()->getMoves()[2]->useMove(player.getActivePokemon(), computer.getActivePokemon());
             break;
         case 4:
-            //use the move at index 3
+            //use the move at index 3 (status)
             player.getActivePokemon()->getMoves()[3]->useMove(player.getActivePokemon(), computer.getActivePokemon());
             break;
         case 5:

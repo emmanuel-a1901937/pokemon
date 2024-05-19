@@ -67,30 +67,43 @@ void Game::playerTurn(){
     // Need to do error handling
 
     // Switch case to activate correct move
+    Pokemon* playerPokemon = player.getActivePokemon(); 
+    Pokemon* computerPokemon = computer.getActivePokemon(); 
     switch (choice){
-        Pokemon* playerPokemon = player.getActivePokemon(); 
-        Pokemon* computerPokemon = computer.getActivePokemon(); 
         case 1:
-            // use the move at index 0 (attack1)
-            Move* a1 = playerPokemon->getMoves()[0];
-            playerPokemon->useAttack(a1, computerPokemon);
-            break;
+            {
+                // use the move at index 0 (attack1)
+                Move* a1 = playerPokemon->getMoves()[0];
+                playerPokemon->useAttack(a1, computerPokemon);
+                break;
+            }
         case 2:
-            //use the move at index 1 (attack2)
-            player.getActivePokemon()->getMoves()[1]->useMove(player.getActivePokemon(), computer.getActivePokemon());
-            break;
+            {
+                //use the move at index 1 (attack2)
+                Move* a2 = playerPokemon->getMoves()[1];
+                playerPokemon->useAttack(a2, computerPokemon);
+                break;
+            }
         case 3:
-            //use the move at index 2 (defend)
-            player.getActivePokemon()->getMoves()[2]->useMove(player.getActivePokemon(), computer.getActivePokemon());
-            break;
+            {
+                //use the move at index 2 (defend)
+                Move* d1 = playerPokemon->getMoves()[1];
+                playerPokemon->useDefend(d1);
+                break;
+            }
         case 4:
-            //use the move at index 3 (status)
-            player.getActivePokemon()->getMoves()[3]->useMove(player.getActivePokemon(), computer.getActivePokemon());
-            break;
+            {
+                //use the move at index 3 (status)
+                Move* s1 = playerPokemon->getMoves()[1];
+                playerPokemon->useStatus(s1, computerPokemon);
+                break;
+            }
         case 5:
-            //save the game (how tf do i make this quit, do I need to?)
-            saveGame();
-            break;
+            {
+                //save the game (how tf do i make this quit, do I need to?)
+                saveGame();
+                break;
+            }
     }
 
     //Computer pokemon has been attacked, if fainted, set next pokemon in party as active Pokemon
@@ -101,23 +114,41 @@ void Game::computerTurn(){
     // Seed the randomness based on the current time
     srand(time(0));
 
-    // Randomly choose an integer from 1 to 4 (inclusive)
-    int choice = rand() % 4;
+    // Randomly choose an integer from 0 to 3 (inclusive)
+    int choice = rand() % 3;
 
     // Based on the choice, the attack is randomly chosen
+    Pokemon* playerPokemon = player.getActivePokemon(); 
+    Pokemon* computerPokemon = computer.getActivePokemon(); 
     switch (choice){
         case 0:
-            //use attack at index 0
-            computer.getActivePokemon()->getMoves()[0]->useMove(computer.getActivePokemon(), player.getActivePokemon());
+            {
+                // use the move at index 0 (attack1)
+                Move* a1 = computerPokemon->getMoves()[0];
+                computerPokemon->useAttack(a1, playerPokemon);
+                break;
+            }
         case 1:
-            //use attack at index 1
-            computer.getActivePokemon()->getMoves()[1]->useMove(computer.getActivePokemon(), player.getActivePokemon());
+            {
+                // use the move at index 1 (attack2)
+                Move* a2 = computerPokemon->getMoves()[1];
+                computerPokemon->useAttack(a2, playerPokemon);
+                break;
+            }
         case 2:
-            //use attack at index 2
-            computer.getActivePokemon()->getMoves()[2]->useMove(computer.getActivePokemon(), player.getActivePokemon());
+            {
+                // use the move at index 2 (defend)
+                Move* d1 = computerPokemon->getMoves()[2];
+                computerPokemon->useDefend(d1);
+                break;
+            }
         case 3:
-            //use attack at index 3
-            computer.getActivePokemon()->getMoves()[3]->useMove(computer.getActivePokemon(), player.getActivePokemon());
+            {
+                // use the move at index 3 (status)
+                Move* s1 = computerPokemon->getMoves()[3];
+                computerPokemon->useStatus(s1, playerPokemon);
+                break;
+            }
     }
 
     //Player pokemon has been attacked, if fainted, set next pokemon in party as active Pokemon

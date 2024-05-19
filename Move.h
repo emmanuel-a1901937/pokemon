@@ -9,6 +9,10 @@ class Move {
   protected: 
     string name; 
     string type; 
+
+  public: 
+    string get_name(); 
+    string get_type(); 
 };
 
 #endif

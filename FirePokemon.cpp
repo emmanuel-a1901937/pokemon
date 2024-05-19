@@ -113,6 +113,10 @@ void FirePokemon::setMoves() {
     this->moves.push_back(s1);
 }
 
+void FirePokemon::useMove(Move* move, Pokemon* targetPokemon) {
+  string moveType = ;  
+}
+
 void FirePokemon::useAttack(FireAttackMove* move, Pokemon* targetPokemon) {
     cout << this->name << " used Fire Attack " << move->getName() << " on " << targetPokemon->getName() << endl; 
 

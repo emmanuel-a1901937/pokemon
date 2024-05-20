@@ -14,16 +14,16 @@ WaterPokemon::WaterPokemon(string names) {
 
     // create list of possible moves 
     // possible attacks 
-    WaterAttackMove* a1 = new WaterAttackMove("TidalWave", "Water", 20, 80);
-    WaterAttackMove* a2 = new WaterAttackMove("AquaVortex", "Water", 25, 75);
-    WaterAttackMove* a3 = new WaterAttackMove("BubbleBurst", "Water", 30, 70);
-    WaterAttackMove* a4 = new WaterAttackMove("HydroHammer", "Water", 35, 65);
-    WaterAttackMove* a5 = new WaterAttackMove("CascadeCrush", "Water", 40, 60);
-    WaterAttackMove* a6 = new WaterAttackMove("WhirlpoolStrike", "Water", 45, 55);
-    WaterAttackMove* a7 = new WaterAttackMove("RainDanceBlitz", "Water", 50, 50);
-    WaterAttackMove* a8 = new WaterAttackMove("AquaLance", "Water", 55, 45);
-    WaterAttackMove* a9 = new WaterAttackMove("GeyserBlast", "Water", 60, 40);
-    WaterAttackMove* a10 = new WaterAttackMove("OceanicRoar", "Water", 65, 35);
+    WaterAttackMove* a1 = new WaterAttackMove("TidalWave", "Attack", 20, 80);
+    WaterAttackMove* a2 = new WaterAttackMove("AquaVortex", "Attack", 25, 75);
+    WaterAttackMove* a3 = new WaterAttackMove("BubbleBurst", "Attack", 30, 70);
+    WaterAttackMove* a4 = new WaterAttackMove("HydroHammer", "Attack", 35, 65);
+    WaterAttackMove* a5 = new WaterAttackMove("CascadeCrush", "Attack", 40, 60);
+    WaterAttackMove* a6 = new WaterAttackMove("WhirlpoolStrike", "Attack", 45, 55);
+    WaterAttackMove* a7 = new WaterAttackMove("RainDanceBlitz", "Attack", 50, 50);
+    WaterAttackMove* a8 = new WaterAttackMove("AquaLance", "Attack", 55, 45);
+    WaterAttackMove* a9 = new WaterAttackMove("GeyserBlast", "Attack", 60, 40);
+    WaterAttackMove* a10 = new WaterAttackMove("OceanicRoar", "Attack", 65, 35);
     possibleAttacks.push_back(a1);
     possibleAttacks.push_back(a2);
     possibleAttacks.push_back(a3);
@@ -36,14 +36,14 @@ WaterPokemon::WaterPokemon(string names) {
     possibleAttacks.push_back(a10);
 
     // possible defence
-    DefendMove* d1 = new DefendMove("SharpenBlade", "Water", 30, 0, 0); // raises attack 
-    DefendMove* d2 = new DefendMove("RaiseShield", "Water", 0, 30 ,0); // raises defence 
-    DefendMove* d3 = new DefendMove("QuickFeet", "Water", 0, 0, 30); // raises speed 
-    DefendMove* d4 = new DefendMove("DualWield", "Water", 60, -40, 0); // doubles attack, halves defence 
-    DefendMove* d5 = new DefendMove("DualShield", "Water", -40, 60, 0); // doubles defence, halves attack 
-    DefendMove* d6 = new DefendMove("LightningBoots", "Water", 0, -40, 60); // doubles speed, halves defence
-    DefendMove* d7 = new DefendMove("HeavyArmour", "Water", 0, 60, -40); // doubles defence, halves speed
-    DefendMove* d8 = new DefendMove("GreatWeapon", "Water", 60, 0, -40); // doubles attack, halves speed
+    DefendMove* d1 = new DefendMove("SharpenBlade", "Defence", 30, 0, 0); // raises attack 
+    DefendMove* d2 = new DefendMove("RaiseShield", "Defence", 0, 30 ,0); // raises defence 
+    DefendMove* d3 = new DefendMove("QuickFeet", "Defence", 0, 0, 30); // raises speed 
+    DefendMove* d4 = new DefendMove("DualWield", "Defence", 60, -40, 0); // doubles attack, halves defence 
+    DefendMove* d5 = new DefendMove("DualShield", "Defence", -40, 60, 0); // doubles defence, halves attack 
+    DefendMove* d6 = new DefendMove("LightningBoots", "Defence", 0, -40, 60); // doubles speed, halves defence
+    DefendMove* d7 = new DefendMove("HeavyArmour", "Defence", 0, 60, -40); // doubles defence, halves speed
+    DefendMove* d8 = new DefendMove("GreatWeapon", "Defence", 60, 0, -40); // doubles attack, halves speed
     possibleDefense.push_back(d1);
     possibleDefense.push_back(d2);
     possibleDefense.push_back(d3);
@@ -54,14 +54,14 @@ WaterPokemon::WaterPokemon(string names) {
     possibleDefense.push_back(d8);
 
     // possible status 
-    StatusMove* s1 = new StatusMove("BreakBlade", "Water", -30, 0, 0, 90); // reduces attack 
-    StatusMove* s2 = new StatusMove("ShieldBreaker", "Water", 0, -30 ,0, 90); // reduces defence 
-    StatusMove* s3 = new StatusMove("StickyFeet", "Water", 0, 0, -30, 90); // reduces speed 
-    StatusMove* s4 = new StatusMove("Infatuate", "Water", -60, 40, 0, 90); // reduces attack, ups defence 
-    StatusMove* s5 = new StatusMove("Taunt", "Water", 40, -60, 0, 90); // reduces defence, ups attack 
-    StatusMove* s6 = new StatusMove("IronBoots", "Water", 0, 40, -60, 90); // reduces speed, ups defence
-    StatusMove* s7 = new StatusMove("SlipperySlippers", "Water", 0, -60, 40, 90); // reduces defence, ups speed
-    StatusMove* s8 = new StatusMove("LilKnives", "Water", -60, 0, 40, 90); // reduces attack, ups speed
+    StatusMove* s1 = new StatusMove("BreakBlade", "Status", -30, 0, 0, 90); // reduces attack 
+    StatusMove* s2 = new StatusMove("ShieldBreaker", "Status", 0, -30 ,0, 90); // reduces defence 
+    StatusMove* s3 = new StatusMove("StickyFeet", "Status", 0, 0, -30, 90); // reduces speed 
+    StatusMove* s4 = new StatusMove("Infatuate", "Status", -60, 40, 0, 90); // reduces attack, ups defence 
+    StatusMove* s5 = new StatusMove("Taunt", "Status", 40, -60, 0, 90); // reduces defence, ups attack 
+    StatusMove* s6 = new StatusMove("IronBoots", "Status", 0, 40, -60, 90); // reduces speed, ups defence
+    StatusMove* s7 = new StatusMove("SlipperySlippers", "Status", 0, -60, 40, 90); // reduces defence, ups speed
+    StatusMove* s8 = new StatusMove("LilKnives", "Status", -60, 0, 40, 90); // reduces attack, ups speed
     possibleStatus.push_back(s1);
     possibleStatus.push_back(s2);
     possibleStatus.push_back(s3);

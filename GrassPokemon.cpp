@@ -15,16 +15,16 @@ GrassPokemon::GrassPokemon(string names) {
     
     // create list of possible moves 
     // possible attacks 
-    GrassAttackMove* a1 = new GrassAttackMove("LeafSurge", "Grass", 20, 80);
-    GrassAttackMove* a2 = new GrassAttackMove("VineLash", "Grass", 25, 75);
-    GrassAttackMove* a3 = new GrassAttackMove("ChlorophyllBurst", "Grass", 30, 70);
-    GrassAttackMove* a4 = new GrassAttackMove("BriarBash", "Grass", 35, 65);
-    GrassAttackMove* a5 = new GrassAttackMove("PetalCyclone", "Grass", 40, 60);
-    GrassAttackMove* a6 = new GrassAttackMove("SapStrike", "Grass", 45, 55);
-    GrassAttackMove* a7 = new GrassAttackMove("RootSnare", "Grass", 50, 50);
-    GrassAttackMove* a8 = new GrassAttackMove("FernFury", "Grass", 55, 45);
-    GrassAttackMove* a9 = new GrassAttackMove("ThicketThrust", "Grass", 60, 40);
-    GrassAttackMove* a10 = new GrassAttackMove("MeadowMirage", "Grass", 65, 35);
+    GrassAttackMove* a1 = new GrassAttackMove("LeafSurge", "Attack", 20, 80);
+    GrassAttackMove* a2 = new GrassAttackMove("VineLash", "Attack", 25, 75);
+    GrassAttackMove* a3 = new GrassAttackMove("ChlorophyllBurst", "Attack", 30, 70);
+    GrassAttackMove* a4 = new GrassAttackMove("BriarBash", "Attack", 35, 65);
+    GrassAttackMove* a5 = new GrassAttackMove("PetalCyclone", "Attack", 40, 60);
+    GrassAttackMove* a6 = new GrassAttackMove("SapStrike", "Attack", 45, 55);
+    GrassAttackMove* a7 = new GrassAttackMove("RootSnare", "Attack", 50, 50);
+    GrassAttackMove* a8 = new GrassAttackMove("FernFury", "Attack", 55, 45);
+    GrassAttackMove* a9 = new GrassAttackMove("ThicketThrust", "Attack", 60, 40);
+    GrassAttackMove* a10 = new GrassAttackMove("MeadowMirage", "Attack", 65, 35);
     possibleAttacks.push_back(a1);
     possibleAttacks.push_back(a2);
     possibleAttacks.push_back(a3);
@@ -37,14 +37,14 @@ GrassPokemon::GrassPokemon(string names) {
     possibleAttacks.push_back(a10);
 
     // possible defence
-    DefendMove* d1 = new DefendMove("SharpenBlade", "Grass", 30, 0, 0); // raises attack 
-    DefendMove* d2 = new DefendMove("RaiseShield", "Grass", 0, 30 ,0); // raises defence 
-    DefendMove* d3 = new DefendMove("QuickFeet", "Grass", 0, 0, 30); // raises speed 
-    DefendMove* d4 = new DefendMove("DualWield", "Grass", 60, -40, 0); // doubles attack, halves defence 
-    DefendMove* d5 = new DefendMove("DualShield", "Grass", -40, 60, 0); // doubles defence, halves attack 
-    DefendMove* d6 = new DefendMove("LightningBoots", "Grass", 0, -40, 60); // doubles speed, halves defence
-    DefendMove* d7 = new DefendMove("HeavyArmour", "Grass", 0, 60, -40); // doubles defence, halves speed
-    DefendMove* d8 = new DefendMove("GreatWeapon", "Grass", 60, 0, -40); // doubles attack, halves speed
+    DefendMove* d1 = new DefendMove("SharpenBlade", "Defence", 30, 0, 0); // raises attack 
+    DefendMove* d2 = new DefendMove("RaiseShield", "Defence", 0, 30 ,0); // raises defence 
+    DefendMove* d3 = new DefendMove("QuickFeet", "Defence", 0, 0, 30); // raises speed 
+    DefendMove* d4 = new DefendMove("DualWield", "Defence", 60, -40, 0); // doubles attack, halves defence 
+    DefendMove* d5 = new DefendMove("DualShield", "Defence", -40, 60, 0); // doubles defence, halves attack 
+    DefendMove* d6 = new DefendMove("LightningBoots", "Defence", 0, -40, 60); // doubles speed, halves defence
+    DefendMove* d7 = new DefendMove("HeavyArmour", "Defence", 0, 60, -40); // doubles defence, halves speed
+    DefendMove* d8 = new DefendMove("GreatWeapon", "Defence", 60, 0, -40); // doubles attack, halves speed
     possibleDefense.push_back(d1);
     possibleDefense.push_back(d2);
     possibleDefense.push_back(d3);
@@ -55,14 +55,14 @@ GrassPokemon::GrassPokemon(string names) {
     possibleDefense.push_back(d8);
 
     // possible status 
-    StatusMove* s1 = new StatusMove("BreakBlade", "Grass", -30, 0, 0, 90); // reduces attack 
-    StatusMove* s2 = new StatusMove("ShieldBreaker", "Grass", 0, -30 ,0, 90); // reduces defence 
-    StatusMove* s3 = new StatusMove("StickyFeet", "Grass", 0, 0, -30, 90); // reduces speed 
-    StatusMove* s4 = new StatusMove("Infatuate", "Grass", -60, 40, 0, 90); // reduces attack, ups defence 
-    StatusMove* s5 = new StatusMove("Taunt", "Grass", 40, -60, 0, 90); // reduces defence, ups attack 
-    StatusMove* s6 = new StatusMove("IronBoots", "Grass", 0, 40, -60, 90); // reduces speed, ups defence
-    StatusMove* s7 = new StatusMove("SlipperySlippers", "Grass", 0, -60, 40, 90); // reduces defence, ups speed
-    StatusMove* s8 = new StatusMove("LilKnives", "Grass", -60, 0, 40, 90); // reduces attack, ups speed
+    StatusMove* s1 = new StatusMove("BreakBlade", "Status", -30, 0, 0, 90); // reduces attack 
+    StatusMove* s2 = new StatusMove("ShieldBreaker", "Status", 0, -30 ,0, 90); // reduces defence 
+    StatusMove* s3 = new StatusMove("StickyFeet", "Status", 0, 0, -30, 90); // reduces speed 
+    StatusMove* s4 = new StatusMove("Infatuate", "Status", -60, 40, 0, 90); // reduces attack, ups defence 
+    StatusMove* s5 = new StatusMove("Taunt", "Status", 40, -60, 0, 90); // reduces defence, ups attack 
+    StatusMove* s6 = new StatusMove("IronBoots", "Status", 0, 40, -60, 90); // reduces speed, ups defence
+    StatusMove* s7 = new StatusMove("SlipperySlippers", "Status", 0, -60, 40, 90); // reduces defence, ups speed
+    StatusMove* s8 = new StatusMove("LilKnives", "Status", -60, 0, 40, 90); // reduces attack, ups speed
     possibleStatus.push_back(s1);
     possibleStatus.push_back(s2);
     possibleStatus.push_back(s3);

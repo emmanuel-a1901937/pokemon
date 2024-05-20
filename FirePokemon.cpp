@@ -17,16 +17,16 @@ FirePokemon::FirePokemon(string names) {
 
     // create list of possible moves 
     // possible attacks 
-    FireAttackMove* a1 = new FireAttackMove("BlazingComet", "Fire", 20, 80);
-    FireAttackMove* a2 = new FireAttackMove("InfernoBurst", "Fire", 25, 75);
-    FireAttackMove* a3 = new FireAttackMove("LavaSurge", "Fire", 30, 70);
-    FireAttackMove* a4 = new FireAttackMove("FlameVortex", "Fire", 35, 65);
-    FireAttackMove* a5 = new FireAttackMove("EmberStorm", "Fire", 40, 60);
-    FireAttackMove* a6 = new FireAttackMove("Pyroclasm", "Fire", 45, 55);
-    FireAttackMove* a7 = new FireAttackMove("ScorchingRay", "Fire", 50, 50);
-    FireAttackMove* a8 = new FireAttackMove("CinderStrike", "Fire", 55, 45);
-    FireAttackMove* a9 = new FireAttackMove("WildfireWave", "Fire", 60, 40);
-    FireAttackMove* a10 = new FireAttackMove("FlareBlitz", "Fire", 65, 35);
+    FireAttackMove* a1 = new FireAttackMove("BlazingComet", "Attack", 20, 80);
+    FireAttackMove* a2 = new FireAttackMove("InfernoBurst", "Attack", 25, 75);
+    FireAttackMove* a3 = new FireAttackMove("LavaSurge", "Attack", 30, 70);
+    FireAttackMove* a4 = new FireAttackMove("FlameVortex", "Attack", 35, 65);
+    FireAttackMove* a5 = new FireAttackMove("EmberStorm", "Attack", 40, 60);
+    FireAttackMove* a6 = new FireAttackMove("Pyroclasm", "Attack", 45, 55);
+    FireAttackMove* a7 = new FireAttackMove("ScorchingRay", "Attack", 50, 50);
+    FireAttackMove* a8 = new FireAttackMove("CinderStrike", "Attack", 55, 45);
+    FireAttackMove* a9 = new FireAttackMove("WildfireWave", "Attack", 60, 40);
+    FireAttackMove* a10 = new FireAttackMove("FlareBlitz", "Attack", 65, 35);
     possibleAttacks.push_back(a1);
     possibleAttacks.push_back(a2);
     possibleAttacks.push_back(a3);
@@ -39,14 +39,14 @@ FirePokemon::FirePokemon(string names) {
     possibleAttacks.push_back(a10);
 
     // possible defence
-    DefendMove* d1 = new DefendMove("SharpenBlade", "Fire", 30, 0, 0); // raises attack 
-    DefendMove* d2 = new DefendMove("RaiseShield", "Fire", 0, 30 ,0); // raises defence 
-    DefendMove* d3 = new DefendMove("QuickFeet", "Fire", 0, 0, 30); // raises speed 
-    DefendMove* d4 = new DefendMove("DualWield", "Fire", 60, -40, 0); // doubles attack, halves defence 
-    DefendMove* d5 = new DefendMove("DualShield", "Fire", -40, 60, 0); // doubles defence, halves attack 
-    DefendMove* d6 = new DefendMove("LightningBoots", "Fire", 0, -40, 60); // doubles speed, halves defence
-    DefendMove* d7 = new DefendMove("HeavyArmour", "Fire", 0, 60, -40); // doubles defence, halves speed
-    DefendMove* d8 = new DefendMove("GreatWeapon", "Fire", 60, 0, -40); // doubles attack, halves speed
+    DefendMove* d1 = new DefendMove("SharpenBlade", "Defence", 30, 0, 0); // raises attack 
+    DefendMove* d2 = new DefendMove("RaiseShield", "Defence", 0, 30 ,0); // raises defence 
+    DefendMove* d3 = new DefendMove("QuickFeet", "Defence", 0, 0, 30); // raises speed 
+    DefendMove* d4 = new DefendMove("DualWield", "Defence", 60, -40, 0); // doubles attack, halves defence 
+    DefendMove* d5 = new DefendMove("DualShield", "Defence", -40, 60, 0); // doubles defence, halves attack 
+    DefendMove* d6 = new DefendMove("LightningBoots", "Defence", 0, -40, 60); // doubles speed, halves defence
+    DefendMove* d7 = new DefendMove("HeavyArmour", "Defence", 0, 60, -40); // doubles defence, halves speed
+    DefendMove* d8 = new DefendMove("GreatWeapon", "Defence", 60, 0, -40); // doubles attack, halves speed
     possibleDefense.push_back(d1);
     possibleDefense.push_back(d2);
     possibleDefense.push_back(d3);
@@ -57,14 +57,14 @@ FirePokemon::FirePokemon(string names) {
     possibleDefense.push_back(d8);
 
     // possible status 
-    StatusMove* s1 = new StatusMove("BreakBlade", "Fire", -30, 0, 0, 90); // reduces attack 
-    StatusMove* s2 = new StatusMove("ShieldBreaker", "Fire", 0, -30 ,0, 90); // reduces defence 
-    StatusMove* s3 = new StatusMove("StickyFeet", "Fire", 0, 0, -30, 90); // reduces speed 
-    StatusMove* s4 = new StatusMove("Infatuate", "Fire", -60, 40, 0, 90); // reduces attack, ups defence 
-    StatusMove* s5 = new StatusMove("Taunt", "Fire", 40, -60, 0, 90); // reduces defence, ups attack 
-    StatusMove* s6 = new StatusMove("IronBoots", "Fire", 0, 40, -60, 90); // reduces speed, ups defence
-    StatusMove* s7 = new StatusMove("SlipperySlippers", "Fire", 0, -60, 40, 90); // reduces defence, ups speed
-    StatusMove* s8 = new StatusMove("LilKnives", "Fire", -60, 0, 40, 90); // reduces attack, ups speed
+    StatusMove* s1 = new StatusMove("BreakBlade", "Status", -30, 0, 0, 90); // reduces attack 
+    StatusMove* s2 = new StatusMove("ShieldBreaker", "Status", 0, -30 ,0, 90); // reduces defence 
+    StatusMove* s3 = new StatusMove("StickyFeet", "Status", 0, 0, -30, 90); // reduces speed 
+    StatusMove* s4 = new StatusMove("Infatuate", "Status", -60, 40, 0, 90); // reduces attack, ups defence 
+    StatusMove* s5 = new StatusMove("Taunt", "Status", 40, -60, 0, 90); // reduces defence, ups attack 
+    StatusMove* s6 = new StatusMove("IronBoots", "Status", 0, 40, -60, 90); // reduces speed, ups defence
+    StatusMove* s7 = new StatusMove("SlipperySlippers", "Status", 0, -60, 40, 90); // reduces defence, ups speed
+    StatusMove* s8 = new StatusMove("LilKnives", "Status", -60, 0, 40, 90); // reduces attack, ups speed
     possibleStatus.push_back(s1);
     possibleStatus.push_back(s2);
     possibleStatus.push_back(s3);

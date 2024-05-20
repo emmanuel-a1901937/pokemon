@@ -67,9 +67,14 @@ void Game::playerTurn(){
     // Need to do error handling
 
     // Switch case to activate correct move
+    Pokemon* playerPokemon = player.getActivePokemon(); 
+    Pokemon* computerPokemon = computer.getActivePokemon(); 
     switch (choice){
         case 1:
-            // use the move at index 0
+            // use the move at index 0 (attack1)
+            Move* a1 = playerPokemon->getMoves()[0];
+            playerPokemon.
+
             player.getActivePokemon()->getMoves()[0]->useMove(player.getActivePokemon(), computer.getActivePokemon());
             break;
         case 2:

@@ -8,6 +8,10 @@ class AttackMove : public Move {
   protected: 
     int damage; 
     int accuracy; 
+  
+  public: 
+    int getDamage();
+    int getAccuracy();
 };
 
 #endif

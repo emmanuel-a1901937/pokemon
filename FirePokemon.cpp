@@ -113,11 +113,20 @@ void FirePokemon::setMoves() {
     this->moves.push_back(s1);
 }
 
-void FirePokemon::useMove(Move* move, Pokemon* targetPokemon) {
-  string moveType = ;  
+void FirePokemon::useMove(Move* move, Pokemon* targetPokemon) { // public function, called by Game object 
+  string moveType = move->getType(); 
+  if (moveType == "Attack") {
+    useAttack(move, targetPokemon);
+  } else if (moveType == "Defence") {
+    useDefend(move); 
+  } else if (moveType == "Status") {
+    useStatus(move, targetPokemon);
+  } else {
+    cout << "Invalid Move option!" << endl; 
+  }
 }
 
-void FirePokemon::useAttack(FireAttackMove* move, Pokemon* targetPokemon) {
+void FirePokemon::useAttack(Move* move, Pokemon* targetPokemon) { // protected function, called by FirePokemon object 
     cout << this->name << " used Fire Attack " << move->getName() << " on " << targetPokemon->getName() << endl; 
 
       // determine if attack hits based on accuracy attribute 
@@ -146,7 +155,7 @@ void FirePokemon::useAttack(FireAttackMove* move, Pokemon* targetPokemon) {
       }    
 }
 
-void FirePokemon::useDefend(DefendMove* move) {
+void FirePokemon::useDefend(Move* move) {
     cout << this->name << " used Defend Move " << move->getName() << "!" << endl; // print message to let user know what move was used
 
       // apply Attack effect
@@ -189,7 +198,7 @@ void FirePokemon::useDefend(DefendMove* move) {
       }
 }
 
-void FirePokemon::useStatus(StatusMove* move, Pokemon* targetPokemon) {
+void FirePokemon::useStatus(Move* move, Pokemon* targetPokemon) {
     cout << name << " used Status Move " << move->getName() << " against " << targetPokemon->getName() << "!" << endl; // print message to let user know what move was used
 
     // determine if status move hits based on accuracy attribute 

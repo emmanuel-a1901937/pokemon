@@ -7,10 +7,6 @@ FireAttackMove::FireAttackMove(string _name, string _type, int _damage, int _acc
   this->accuracy = _accuracy; 
 }
 
-string FireAttackMove::getName() {
-  return name; 
-}
-
 int FireAttackMove::getDamage() {
   return damage; 
 }

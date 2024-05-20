@@ -18,6 +18,7 @@ class StatusMove : public Move {
     int getDefenceEffect();
     int getSpeedEffect();
     int getAccuracy();
+    void f(); 
 };
 
 #endif

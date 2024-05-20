@@ -16,6 +16,7 @@ class DefendMove : public Move {
     int getAttackEffect();
     int getDefenceEffect();
     int getSpeedEffect();
+    void f(); 
 };
 
 #endif

@@ -39,14 +39,14 @@ FirePokemon::FirePokemon(string names) {
     possibleAttacks.push_back(a10);
 
     // possible defence
-    DefendMove* d1 = new DefendMove("SharpenBlade", "Defence", 30, 0, 0); // raises attack 
-    DefendMove* d2 = new DefendMove("RaiseShield", "Defence", 0, 30 ,0); // raises defence 
-    DefendMove* d3 = new DefendMove("QuickFeet", "Defence", 0, 0, 30); // raises speed 
-    DefendMove* d4 = new DefendMove("DualWield", "Defence", 60, -40, 0); // doubles attack, halves defence 
-    DefendMove* d5 = new DefendMove("DualShield", "Defence", -40, 60, 0); // doubles defence, halves attack 
-    DefendMove* d6 = new DefendMove("LightningBoots", "Defence", 0, -40, 60); // doubles speed, halves defence
-    DefendMove* d7 = new DefendMove("HeavyArmour", "Defence", 0, 60, -40); // doubles defence, halves speed
-    DefendMove* d8 = new DefendMove("GreatWeapon", "Defence", 60, 0, -40); // doubles attack, halves speed
+    DefendMove* d1 = new DefendMove("SharpenBlade", "Defend", 30, 0, 0); // raises attack 
+    DefendMove* d2 = new DefendMove("RaiseShield", "Defend", 0, 30 ,0); // raises defence 
+    DefendMove* d3 = new DefendMove("QuickFeet", "Defend", 0, 0, 30); // raises speed 
+    DefendMove* d4 = new DefendMove("DualWield", "Defend", 60, -40, 0); // doubles attack, halves defence 
+    DefendMove* d5 = new DefendMove("DualShield", "Defend", -40, 60, 0); // doubles defence, halves attack 
+    DefendMove* d6 = new DefendMove("LightningBoots", "Defend", 0, -40, 60); // doubles speed, halves defence
+    DefendMove* d7 = new DefendMove("HeavyArmour", "Defend", 0, 60, -40); // doubles defence, halves speed
+    DefendMove* d8 = new DefendMove("GreatWeapon", "Defend", 60, 0, -40); // doubles attack, halves speed
     possibleDefense.push_back(d1);
     possibleDefense.push_back(d2);
     possibleDefense.push_back(d3);
@@ -117,7 +117,7 @@ void FirePokemon::useMove(Move* move, Pokemon* targetPokemon) { // public functi
   string moveType = move->getType(); 
   if (moveType == "Attack") {
     useAttack(move, targetPokemon);
-  } else if (moveType == "Defence") {
+  } else if (moveType == "Defend") {
     useDefend(move); 
   } else if (moveType == "Status") {
     useStatus(move, targetPokemon);

@@ -30,6 +30,7 @@ class Pokemon{
         void setSpeed(int newSpeed); 
         std::string getType(); 
         bool isFainted(); 
+        virtual void useMove(Move* move, Pokemon* targetPokemon) = 0; 
 };
 
 

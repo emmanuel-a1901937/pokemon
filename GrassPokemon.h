@@ -12,12 +12,14 @@ protected:
     vector<GrassAttackMove*> possibleAttacks;
     vector<DefendMove*> possibleDefense;
     vector<StatusMove*> possibleStatus;
+    void useAttack(Move* move, Pokemon* targetPokemon);
+    void useDefend(Move* move); 
+    void useStatus(Move* move, Pokemon* targetPokemon);
+
 public: 
     GrassPokemon(string names);
     void setMoves(); 
-    void useAttack(GrassAttackMove* move, Pokemon* targetPokemon);
-    void useDefend(DefendMove* move); 
-    void useStatus(StatusMove* move, Pokemon* targetPokemon);
+    void useMove(Move* move, Pokemon* targetPokemon);
 };
 
 #endif

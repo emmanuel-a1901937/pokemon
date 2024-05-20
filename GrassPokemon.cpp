@@ -111,7 +111,20 @@ void GrassPokemon::setMoves() {
     this->moves.push_back(s1);
 }
 
-void GrassPokemon::useAttack(GrassAttackMove* move, Pokemon* targetPokemon) {
+void GrassPokemon::useMove(Move* move, Pokemon* targetPokemon) { // public function, called by Game object 
+  string moveType = move->getType(); 
+  if (moveType == "Attack") {
+    useAttack(move, targetPokemon);
+  } else if (moveType == "Defence") {
+    useDefend(move); 
+  } else if (moveType == "Status") {
+    useStatus(move, targetPokemon);
+  } else {
+    cout << "Invalid Move option!" << endl; 
+  }
+}
+
+void GrassPokemon::useAttack(Move* move, Pokemon* targetPokemon) {
     cout << this->name << " used Grass Attack " << move->getName() << " on " << targetPokemon->getName() << endl; 
 
       // determine if attack hits based on accuracy attribute 
@@ -140,7 +153,7 @@ void GrassPokemon::useAttack(GrassAttackMove* move, Pokemon* targetPokemon) {
       }    
 }
 
-void GrassPokemon::useDefend(DefendMove* move) {
+void GrassPokemon::useDefend(Move* move) {
     cout << this->name << " used Defend Move " << move->getName() << "!" << endl; // print message to let user know what move was used
 
       // apply Attack effect
@@ -183,7 +196,7 @@ void GrassPokemon::useDefend(DefendMove* move) {
       }
 }
 
-void GrassPokemon::useStatus(StatusMove* move, Pokemon* targetPokemon) {
+void GrassPokemon::useStatus(Move* move, Pokemon* targetPokemon) {
     cout << name << " used Status Move " << move->getName() << " against " << targetPokemon->getName() << "!" << endl; // print message to let user know what move was used
 
     // determine if status move hits based on accuracy attribute 

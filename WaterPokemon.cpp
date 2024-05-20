@@ -110,7 +110,20 @@ void WaterPokemon::setMoves() {
     this->moves.push_back(s1);
 }
 
-void WaterPokemon::useAttack(WaterAttackMove* move, Pokemon* targetPokemon) {
+void WaterPokemon::useMove(Move* move, Pokemon* targetPokemon) { // public function, called by Game object 
+  string moveType = move->getType(); 
+  if (moveType == "Attack") {
+    useAttack(move, targetPokemon);
+  } else if (moveType == "Defence") {
+    useDefend(move); 
+  } else if (moveType == "Status") {
+    useStatus(move, targetPokemon);
+  } else {
+    cout << "Invalid Move option!" << endl; 
+  }
+}
+
+void WaterPokemon::useAttack(Move* move, Pokemon* targetPokemon) {
     cout << this->name << " used Water Attack " << move->getName() << " on " << targetPokemon->getName() << endl; 
 
       // determine if attack hits based on accuracy attribute 
@@ -139,7 +152,7 @@ void WaterPokemon::useAttack(WaterAttackMove* move, Pokemon* targetPokemon) {
       }    
 }
 
-void WaterPokemon::useDefend(DefendMove* move) {
+void WaterPokemon::useDefend(Move* move) {
     cout << this->name << " used Defend Move " << move->getName() << "!" << endl; // print message to let user know what move was used
 
       // apply Attack effect
@@ -182,7 +195,7 @@ void WaterPokemon::useDefend(DefendMove* move) {
       }
 }
 
-void WaterPokemon::useStatus(StatusMove* move, Pokemon* targetPokemon) {
+void WaterPokemon::useStatus(Move* move, Pokemon* targetPokemon) {
     cout << name << " used Status Move " << move->getName() << " against " << targetPokemon->getName() << "!" << endl; // print message to let user know what move was used
 
     // determine if status move hits based on accuracy attribute 

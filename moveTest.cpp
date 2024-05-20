@@ -23,6 +23,10 @@ void testCreateMoves() { // test creating Move objects
 }
 
 void testCreatePokemon() { // test creating Pokemon objects 
+
+  // NOTE: RANDOM NUMBER GENERATORS ARE NOT SEEDED IN FIREPOKEMON, WATERPOKEMON, GRASSPOKEMON CONSTRUCTORS SO THEY KEEP GENERATING THE SAME STATS !! 
+
+  // create a FirePokemon
   Pokemon* firey = new FirePokemon("Firey");
   cout << "Name: " << firey->getName() << endl; 
   cout << "Type: " << firey->getType() << endl; 
@@ -31,9 +35,41 @@ void testCreatePokemon() { // test creating Pokemon objects
   cout << "Defence stat: " << firey->getDefence() << endl; 
   cout << "Speed stat: " << firey->getSpeed() << endl; 
   // print names of each move
-  vector<Move*>& moves = firey->getMoves(); 
+  vector<Move*>& movesFirey = firey->getMoves(); 
   for (int i = 0; i < 4; i++) {
-    cout << "Move #" << i << " name: " << moves[i]->getName() << endl; 
+    cout << "Move #" << i << " name: " << movesFirey[i]->getName() << endl; 
+  }
+  cout << "*** ***" << endl; // spacer line in terminal 
+
+
+  // create a WaterPokemon 
+  Pokemon* puddle = new WaterPokemon("Puddle");
+  cout << "Name: " << puddle->getName() << endl; 
+  cout << "Type: " << puddle->getType() << endl; 
+  cout << "Health: " << puddle->getHealth() << endl; 
+  cout << "Attack stat: " << puddle->getAttack() << endl; 
+  cout << "Defence stat: " << puddle->getDefence() << endl; 
+  cout << "Speed stat: " << puddle->getSpeed() << endl; 
+  // print names of each move
+  vector<Move*>& movesPuddle = puddle->getMoves(); 
+  for (int i = 0; i < 4; i++) {
+    cout << "Move #" << i << " name: " << movesPuddle[i]->getName() << endl; 
+  }
+  cout << "*** ***" << endl; // spacer line in terminal 
+
+
+  // create a GrassPokemon 
+  Pokemon* dirt = new GrassPokemon("Dirt");
+  cout << "Name: " << dirt->getName() << endl; 
+  cout << "Type: " << dirt->getType() << endl; 
+  cout << "Health: " << dirt->getHealth() << endl; 
+  cout << "Attack stat: " << dirt->getAttack() << endl; 
+  cout << "Defence stat: " << dirt->getDefence() << endl; 
+  cout << "Speed stat: " << dirt->getSpeed() << endl; 
+  // print names of each move
+  vector<Move*>& movesDirt = dirt->getMoves(); 
+  for (int i = 0; i < 4; i++) {
+    cout << "Move #" << i << " name: " << movesDirt[i]->getName() << endl; 
   }
 }
 

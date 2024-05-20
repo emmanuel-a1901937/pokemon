@@ -10,8 +10,18 @@ class Move {
     string name; 
     string type; 
 
-  public:
-    virtual void f(); 
+  public: 
+    string getName(); 
+    string getType(); 
+
+    // AttackMove child functions 
+    int getDamage();
+    int getAccuracy(); // note: also a StatusMove child function 
+
+    // DefendMove and StatusMove child functions
+    int getAttackEffect();
+    int getDefenceEffect();
+    int getSpeedEffect();
 };
 
 #endif

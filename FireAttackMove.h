@@ -7,7 +7,6 @@ using namespace std;
 class FireAttackMove : public AttackMove {
   public: 
     FireAttackMove(string _name, string _type, int _damage, int _accuracy); 
-    string getName();
     int getDamage();
     int getAccuracy();
 };

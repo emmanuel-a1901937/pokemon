@@ -30,9 +30,7 @@ class Pokemon{
         void setSpeed(int newSpeed); 
         std::string getType(); 
         bool isFainted(); 
-        virtual void useAttack(Move* move, Pokemon* targetPokemon) = 0;
-        virtual void useDefend(Move* move) = 0; 
-        virtual void useStatus(Move* move, Pokemon* targetPokemon) = 0;
+        virtual void useMove(Move* move, Pokemon* targetPokemon) = 0; 
 };
 
 

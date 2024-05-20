@@ -12,12 +12,14 @@ class WaterPokemon : public Pokemon {
     vector<WaterAttackMove*> possibleAttacks;
     vector<DefendMove*> possibleDefense;
     vector<StatusMove*> possibleStatus;
-  public: 
-    WaterPokemon(string names);
-    void setMoves(); 
     void useAttack(Move* move, Pokemon* targetPokemon);
     void useDefend(Move* move); 
     void useStatus(Move* move, Pokemon* targetPokemon);
+
+  public: 
+    WaterPokemon(string names);
+    void setMoves(); 
+    void useMove(Move* move, Pokemon* targetPokemon);
 };
 
 #endif

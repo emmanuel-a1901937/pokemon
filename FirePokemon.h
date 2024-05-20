@@ -13,13 +13,14 @@ class FirePokemon : public Pokemon {
   vector<FireAttackMove*> possibleAttacks;
   vector<DefendMove*> possibleDefense;
   vector<StatusMove*> possibleStatus;
+  void useAttack(Move* move, Pokemon* targetPokemon);
+  void useDefend(Move* move);
+  void useStatus(Move* move, Pokemon* targetPokemon);
 
   public:
     FirePokemon(string names);
     void setMoves(); 
-    void useAttack(Move* move, Pokemon* targetPokemon);
-    void useDefend(Move* move); 
-    void useStatus(Move* move, Pokemon* targetPokemon);
+    void useMove(Move* move, Pokemon* targetPokemon); 
 };
 
 #endif

@@ -1,15 +1,18 @@
 #include <vector>
 #include "WaterPokemon.h"
+#include <cstdlib>
 #include <iostream>
+#include <time.h>
 
 WaterPokemon::WaterPokemon(string names) {
+    srand(time(0));
     name = names;
     type = "Water";
-    maxHealth = rand() % 200 + 100; //These are just random values as placeholders, feel free to change
+    maxHealth = rand() % 101 + 100; //These are just random values as placeholders, feel free to change
     currentHealth = maxHealth;
-    attack = rand() % 90 + 70;
-    defence = rand() % 90 + 70;
-    speed = rand() % 90 + 70;
+    attack = rand() % 21 + 70;
+    defence = rand() % 21 + 70;
+    speed = rand() % 21 + 70;
     fainted = false;
 
     // create list of possible moves 

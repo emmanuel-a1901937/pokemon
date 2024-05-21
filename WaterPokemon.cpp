@@ -4,7 +4,7 @@
 #include <iostream>
 #include <time.h>
 
-WaterPokemon::WaterPokemon(string names) {
+WaterPokemon::WaterPokemon(string names) { // Constructs a Water Pokemon using randomly generated stats and an inputted name
     srand(time(0));
     name = names;
     type = "Water";
@@ -132,19 +132,21 @@ void WaterPokemon::useAttack(Move* move, Pokemon* targetPokemon) {
       // determine if attack hits based on accuracy attribute 
       srand(static_cast<unsigned int>(time(0))); // seed rng with the current time
       int randomNumber = rand() % 100; // generate a random number between 0 and 99
-
+      cout << randomNumber <<endl;
       if (randomNumber < move->getAccuracy()) { // attack hits if randomNumber falls below the accuracy attribute 
         float bonus = 1; 
 
         if (targetPokemon->getType() == "Fire") {
           bonus = 1.5; // super effective bonus applied if FireAttackMove used against FirePokemon
+        } else if(targetPokemon->getType() == "Grass") {
+          bonus = 0.5;
         }
 
         // calculate damage dealt 
         float attackPower = move->getDamage(); 
         float actingPokemonAttackStat = this->attack; 
         float targetPokemonDefenceStat = targetPokemon->getDefence(); 
-        float totalDamage = (attackPower * (actingPokemonAttackStat/targetPokemonDefenceStat)) * bonus; 
+        int totalDamage = (attackPower * (actingPokemonAttackStat/targetPokemonDefenceStat)) * bonus; 
 
         targetPokemon->takeDamage(totalDamage); // reduce p2 health 
         cout << this->name << " successfully dealt " << totalDamage <<  " damage to " << targetPokemon->getName() << endl; // print successful attack message 
@@ -204,7 +206,7 @@ void WaterPokemon::useStatus(Move* move, Pokemon* targetPokemon) {
     // determine if status move hits based on accuracy attribute 
     srand(static_cast<unsigned int>(time(0))); // seed rng with the current time
     int randomNumber = rand() % 100; // generate a random number between 0 and 99
-
+    cout << randomNumber <<endl;
     if (randomNumber < move->getAccuracy()) { // status move hits if randomNumber falls below the accuracy attribute 
 
     // apply Attack effect

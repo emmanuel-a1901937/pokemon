@@ -10,17 +10,17 @@ using namespace std;
 
 class FirePokemon : public Pokemon {
   protected: 
-  vector<FireAttackMove*> possibleAttacks;
-  vector<DefendMove*> possibleDefense;
-  vector<StatusMove*> possibleStatus;
-  void useAttack(Move* move, Pokemon* targetPokemon);
-  void useDefend(Move* move);
-  void useStatus(Move* move, Pokemon* targetPokemon);
+  vector<FireAttackMove*> possibleAttacks; // Contains all Possible Fire Attack Moves
+  vector<DefendMove*> possibleDefense; // Contains all Possible Defence Moves
+  vector<StatusMove*> possibleStatus; // Contains all Possible Status Moves
+  void useAttack(Move* move, Pokemon* targetPokemon); // Uses an Attacking move on a pokemon.
+  void useDefend(Move* move); // Uses a Defence Move on itself.
+  void useStatus(Move* move, Pokemon* targetPokemon); // Uses a status move on opposing pokemon
 
   public:
     FirePokemon(string names);
-    void setMoves(); 
-    void useMove(Move* move, Pokemon* targetPokemon); 
+    void setMoves(); // Sets the pokemons moves from a the vector of available moves
+    void useMove(Move* move, Pokemon* targetPokemon); // Uses a move from a pokemons list of assigned moves on a specific pokemon.
 };
 
 #endif

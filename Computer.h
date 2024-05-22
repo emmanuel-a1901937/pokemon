@@ -5,6 +5,7 @@
 
 class Computer : public Trainer{
     public:
+        // Initialisation of pokemon is random
         Computer();
 };
 

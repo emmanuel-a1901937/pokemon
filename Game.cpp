@@ -12,7 +12,26 @@
 // Function to run the game loop
 void Game::run(){
 
-    //Need to include the main menu and its choices here
+    // Display the main menu and its choices (see function for more details)
+    displayMainMenu();
+
+    // Take an input of the players choice
+    int choice;
+    std::cin >> choice;
+
+    switch (choice){
+    // Player wants to play the game (just let code run procedurally)
+    case 1:
+        break;
+    // Player wants to load a saved game
+    case 2:
+        loadGame();
+        break;
+    // Player wants to exit the program
+    case 3:
+        return;
+        break;
+    }
 
     // Allow the player to choose their pokemon (see function for more details)
     initialise();
@@ -119,7 +138,7 @@ void Game::computerTurn(){
     srand(time(0));
 
     // Randomly choose an integer from 0 to 3 (inclusive)
-    int choice = rand() % 3;
+    int choice = rand() % 4;
 
     // Based on the choice, the attack is randomly chosen
     switch (choice){
@@ -167,29 +186,66 @@ bool Game::gameOver(){
             std::cout << "You win!!" << std::endl;
             return true;
     }
-
+    // If all player pokemon have fainted, but computer has some left, you lose
     else if (player.partyFainted() && !computer.partyFainted()){
         std::cout << "You lost, you suck!" << std::endl;
         return true;
     }
+    // Otherwise continue game as usual
     return false;
 }
 
-void Game::displayMainMenu(){
-    std::cout << "Welcome to Pokemon: Knockoff!" << std::endl;
+// Display all the choices to the player
+void Game::displayMainMenu() {
+    std::cout << "===================================" << std::endl;
+    std::cout << "       Welcome to Pokemon: Knockoff!       " << std::endl;
+    std::cout << "===================================" << std::endl;
+    std::cout << "           Main Menu               " << std::endl;
+    std::cout << "-----------------------------------" << std::endl;
     std::cout << "1. New Game" << std::endl;
     std::cout << "2. Load Game" << std::endl;
     std::cout << "3. Quit" << std::endl;
+    std::cout << "-----------------------------------" << std::endl;
+    std::cout << "Please enter your choice: ";
 }
 
-void Game::displayGameMenu(){
-    std::cout << "Your move!" << std::endl;
-    // show opposing pokemon name & health & maybe type
-    std::cout << player.getActivePokemon()->getName() << "'s health is: " << player.getActivePokemon()->getHealth() << std::endl;
-    // Need to write functions for getting the name, damage & accuracy of the move
-    std::cout << "1. Use " << player.getActivePokemon()->getMoves()[0] << std::endl;
-    std::cout << "2. Use " << player.getActivePokemon()->getMoves()[0] << std::endl;
-    std::cout << "3. Use " << player.getActivePokemon()->getMoves()[0] << std::endl;
-    std::cout << "4. Use " << player.getActivePokemon()->getMoves()[0] <<std::endl;
+void Game::displayGameMenu() {
+    // Display a header or a title for the game menu
+    std::cout << "========================" << std::endl;
+    std::cout << "         Your Move!        " << std::endl;
+    std::cout << "========================" << std::endl;
+
+    // Display player's Pokemon's name and health
+    Pokemon* activePokemon = player.getActivePokemon();
+    std::cout << "Your active Pokemon: " << activePokemon->getName() << std::endl;
+    std::cout << "Health: " << activePokemon->getHealth() << std::endl;
+    std::cout << "Type: " << activePokemon->getType() << std::endl;
+
+    // Display computer's Pokemon's name and health
+    Pokemon* computerPokemon = computer.getActivePokemon();
+    std::cout << "Opponents Pokemon: " << computerPokemon->getName() << std::endl;
+    std::cout << "Health: " << computerPokemon->getHealth() << std::endl;
+
+    // Display the available moves
+    std::cout << "\nAvailable Moves:" << std::endl;
+    std::vector<Move*>& moves = activePokemon->getMoves();
+
+    // First two are attacking moves
+    for (int i = 0; i < 2; i++) {
+        std::cout << i + 1 << ". " << moves[i]->getName() << std::endl;
+        std::cout << "   Damage: " << moves[i]->getDamage() << " | Accuracy: " << moves[i]->getAccuracy() << std::endl;
+    }
+
+    // Third is a defense move
+    std::cout << "3. " << moves[2]->getName() << " - Defense move" << std::endl;
+
+    // Fourth is a status move
+    std::cout << "4. " << moves[3]->getName() << " - Status move" << std::endl;
+
+    // Option to save and quit
     std::cout << "5. Save and Quit" << std::endl;
+
+    // Additional styling or prompts
+    std::cout << "========================" << std::endl;
+    std::cout << "Choose an option (1-5): ";
 }

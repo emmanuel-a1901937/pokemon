@@ -11,6 +11,7 @@ class Pokemon{
         std::string name;
         std::vector<Move*> moves; // in the order of Attack, Attack, Defence, Status
         int currentHealth;
+        int maxHealth;
         int attack;
         int defence;
         int speed;

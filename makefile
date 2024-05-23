@@ -1,0 +1,2 @@
+Pokemon: AttackMove.cpp compTestMain.cpp Computer.cpp DefendMove.cpp FireAttackMove.cpp FirePokemon.cpp Game.cpp GrassAttackMove.cpp GrassPokemon.cpp main.cpp Move.cpp Pokemon.cpp StatusMove.cpp Trainer.cpp WaterAttackMove.cpp WaterPokemon.cpp
+	g++ AttackMove.cpp compTestMain.cpp Computer.cpp DefendMove.cpp FireAttackMove.cpp FirePokemon.cpp Game.cpp GrassAttackMove.cpp GrassPokemon.cpp main.cpp Move.cpp Pokemon.cpp StatusMove.cpp Trainer.cpp WaterAttackMove.cpp WaterPokemon.cpp -o run

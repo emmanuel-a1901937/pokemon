@@ -135,7 +135,7 @@ void FirePokemon::useAttack(Move* move, Pokemon* targetPokemon) { // protected f
       // determine if attack hits based on accuracy attribute 
       srand(static_cast<unsigned int>(time(0))); // seed rng with the current time
       int randomNumber = rand() % 100; // generate a random number between 0 and 99
-      cout << randomNumber <<endl;
+      
       if (randomNumber < move->getAccuracy()) { // attack hits if randomNumber falls below the accuracy attribute 
         float bonus = 1; 
 
@@ -209,7 +209,7 @@ void FirePokemon::useStatus(Move* move, Pokemon* targetPokemon) {
     // determine if status move hits based on accuracy attribute 
     srand(static_cast<unsigned int>(time(0))); // seed rng with the current time
     int randomNumber = rand() % 100; // generate a random number between 0 and 99
-    cout << randomNumber <<endl;
+    
     if (randomNumber < move->getAccuracy()) { // status move hits if randomNumber falls below the accuracy attribute 
 
     // apply Attack effect

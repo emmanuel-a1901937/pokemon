@@ -5,4 +5,5 @@ int main(){
     test.testInitialise();
     test.testGameOver();
     test.testPlayerTurn();
+    test.testComputerTurn(); 
 }

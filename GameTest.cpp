@@ -5,7 +5,7 @@
 
 void GameTest::testInitialise(){
     game.initialise();
-    if(game.getTrainer().getActivePokemon()->getName() != "A"){
+    if(game.getTrainer().getActivePokemon()->getName() != "A"){ // When testing, first Pokemon's name was set to "A"
         std::cout << "Program didn't work as expected (1)" << std::endl;
     }
     else {
@@ -26,4 +26,8 @@ void GameTest::testGameOver(){
         std::cout << "Program didn't work as expected (3)" << std::endl;
     }
 
+}
+
+void GameTest::testComputerTurn() {
+    game.computerTurn(); 
 }

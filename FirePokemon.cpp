@@ -258,15 +258,21 @@ void FirePokemon::useStatus(Move* move, Pokemon* targetPokemon) {
 }
 
 FirePokemon::~FirePokemon() {
+  // delete each status attack & defence attack
   for (int i = 0; i < 8; i++){
     delete possibleStatus[i];
     delete possibleDefense[i];
   }
+
+  // remove the elements from the vector
   possibleDefense.clear();
   possibleStatus.clear(); 
 
+  // delete each attack
   for (int i = 0; i < 10; i++){
     delete possibleAttacks[i];
   }
+
+  // remove the elements from the vector
   possibleAttacks.clear();
 }

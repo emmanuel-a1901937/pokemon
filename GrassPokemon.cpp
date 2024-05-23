@@ -296,15 +296,21 @@ void GrassPokemon::useStatus(Move *move, Pokemon *targetPokemon)
 }
 
 GrassPokemon::~GrassPokemon(){
+  // Delete each status & defense move
   for (int i = 0; i < 8; i++){
     delete possibleStatus[i];
     delete possibleDefense[i];
   }
+
+  // remove the elements from the vector
   possibleDefense.clear();
   possibleStatus.clear(); 
 
+  // Delete each attack
   for (int i = 0; i < 10; i++){
     delete possibleAttacks[i];
   }
+
+  // remove the elements from the vector
   possibleAttacks.clear();
 }

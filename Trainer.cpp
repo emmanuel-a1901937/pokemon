@@ -15,13 +15,12 @@ void Trainer::addPokemon(){
 
         // Ask the player what type of Pokemon they want to add to their party
         std::cout << "What type of pokemon do you want? (1 = Fire, 2 = Water, 3 = Grass)" << std::endl;
-        std::cin >> choice;
-
-        // Ensure the player doesn't choose greater than 3 or 0 or less
-        while (choice > 3 || choice <= 0){
-            std::cout << "Try again, invalid input" << std::endl;
-            std::cout << "What type of pokemon do you want? (1 = Fire, 2 = Water, 3 = Grass)" << std::endl;
-            std::cin >> choice;
+        
+        // While loop to take choice, but also only allow 1, 2 or 3 as inputs
+        while (!(std::cin >> choice) || (choice != 1 && choice != 2 && choice != 3)) {
+            std::cout << "Invalid choice, please enter 1 for Fire, 2 for Water, or 3 for Grass: ";
+            std::cin.clear(); 
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); 
         }
 
         // Ask the what they want to call their Pokemon
@@ -58,14 +57,10 @@ void Trainer::replacePokemon() {
     // Ask the player which pokemon they would like to remove from their party
     std::cout << "Which Pokemon would you like to remove?" << std::endl;
 
-    // Take the input of the players choice
-    std::cin >> choice;
-
-    // While loop to ensure input of 0 to 2
-    while (choice < 0 || choice >= size) {
-        std::cout << "Try again, invalid input" << std::endl;
-        std::cout << "Which Pokemon would you like to remove?" << std::endl;
-        std::cin >> choice;
+    while (!(std::cin >> choice) || (choice != 0 && choice != 1 && choice != 2)) {
+        std::cout << "Invalid choice, choose index 0, 1 or 2: ";
+        std::cin.clear(); 
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); 
     }
 
     // Save name for confirmation later after deletion
@@ -81,13 +76,11 @@ void Trainer::replacePokemon() {
 
     // add a new Pokemon (need to fix this as will try to add 3 again)
     std::cout << "What type of pokemon do you want as a replacement? (1 = Fire, 2 = Water, 3 = Grass)" << std::endl;
-    std::cin >> choice;
 
-    // Ensure the player doesn't choose greater than 3 or 0 or less
-    while (choice > 3 || choice <= 0){
-        std::cout << "Try again, invalid input" << std::endl;
-        std::cout << "What type of pokemon do you want? (1 = Fire, 2 = Water, 3 = Grass)" << std::endl;
-        std::cin >> choice;
+    while (!(std::cin >> choice) || (choice != 1 && choice != 2 && choice != 3)) {
+        std::cout << "Invalid choice, please enter 1 for Fire, 2 for Water, or 3 for Grass: ";
+        std::cin.clear(); 
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); 
     }
 
         // Ask the what they want to call their Pokemon
@@ -118,14 +111,12 @@ bool Trainer::confirmPokemon() {
 
     // Ask the player if they are happy with their choice
     std::cout << "Are you happy with your choice? (1 = yes, 2 = no): ";
-    std::cin >> choice;
     
     // While loop to ensure that only 1 or 2 can be input
-    while (choice != 1 && choice != 2) {
+      while (!(std::cin >> choice) || (choice != 1 && choice != 2)) {
         std::cout << "Invalid choice, please enter 1 for yes or 2 for no: ";
         std::cin.clear(); 
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); 
-        std::cin >> choice;
     }
 
     // Return true if 1, or false if 2

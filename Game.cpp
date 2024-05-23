@@ -17,7 +17,11 @@ void Game::run(){
 
     // Take an input of the players choice
     int choice;
-    std::cin >> choice;
+    while (!(std::cin >> choice) || (choice != 1 && choice != 2)) {
+        std::cout << "Invalid choice, please enter 1 for new game, or 2 to quit: ";
+        std::cin.clear(); 
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); 
+    }
 
     switch (choice){
     // Player wants to play the game (just let code run procedurally)
@@ -32,12 +36,12 @@ void Game::run(){
     // Allow the player to choose their pokemon (see function for more details)
     initialise();
 
-    round = 1;
+    int round = 1;
 
     // Main game loop, runs until one party has no more un-fainted pokemon
     while (!player.partyFainted() && !computer.partyFainted()) {
 
-        std::cout << "Round " << round << std::endl;
+        std::cout << "\n" << "Round " << round << "\n" << std::endl;
 
         // If the player's pokemon's speed is greater or same as the computer's, player goes first
         if (player.getActivePokemon()->getSpeed() >= computer.getActivePokemon()->getSpeed()) {
@@ -86,9 +90,11 @@ void Game::playerTurn(){
 
     // Ask the player to make a choice
     int choice;
-    std::cin >> choice;
-
-    // Need to do error handling
+    while (!(std::cin >> choice) || (choice != 1 && choice != 2 && choice != 3 && choice != 4)) {
+        std::cout << "Invalid choice, please enter 1 for Fire, 2 for Water, or 3 for Grass: ";
+        std::cin.clear(); 
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); 
+    }
 
     // Switch case to activate correct move
     switch (choice){
@@ -249,6 +255,7 @@ void Game::displayGameMenu() {
     std::cout << "   Attack Effect: " << moves[3]->getAttackEffect() << " ";
     std::cout << "Defence Effect: " << moves[3]->getDefenceEffect() << " ";
     std::cout << "Speed Effect: " << moves[3]->getSpeedEffect() << std::endl; 
+    std::cout << "\n";
 
     // Additional styling or prompts
     std::cout << "========================" << std::endl;

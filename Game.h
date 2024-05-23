@@ -8,7 +8,6 @@ class Game{
     protected:
         Trainer player;
         Computer computer;
-        int round;
     public:
         void run(); // Function to run the game loop
         void initialise(); // Function to allow the player to choose their pokemon

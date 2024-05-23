@@ -18,16 +18,16 @@ WaterPokemon::WaterPokemon(string names)
 
   // create list of possible moves
   // possible attacks
-  WaterAttackMove *a1 = new WaterAttackMove("TidalWave", "Attack", 20, 80);
-  WaterAttackMove *a2 = new WaterAttackMove("AquaVortex", "Attack", 25, 75);
-  WaterAttackMove *a3 = new WaterAttackMove("BubbleBurst", "Attack", 30, 70);
-  WaterAttackMove *a4 = new WaterAttackMove("HydroHammer", "Attack", 35, 65);
-  WaterAttackMove *a5 = new WaterAttackMove("CascadeCrush", "Attack", 40, 60);
-  WaterAttackMove *a6 = new WaterAttackMove("WhirlpoolStrike", "Attack", 45, 55);
-  WaterAttackMove *a7 = new WaterAttackMove("RainDanceBlitz", "Attack", 50, 50);
-  WaterAttackMove *a8 = new WaterAttackMove("AquaLance", "Attack", 55, 45);
-  WaterAttackMove *a9 = new WaterAttackMove("GeyserBlast", "Attack", 60, 40);
-  WaterAttackMove *a10 = new WaterAttackMove("OceanicRoar", "Attack", 65, 35);
+  WaterAttackMove *a1 = new WaterAttackMove("TidalWave", "Attack", 20, 100);
+  WaterAttackMove *a2 = new WaterAttackMove("AquaVortex", "Attack", 25, 97);
+  WaterAttackMove *a3 = new WaterAttackMove("BubbleBurst", "Attack", 30, 94);
+  WaterAttackMove *a4 = new WaterAttackMove("HydroHammer", "Attack", 35, 91);
+  WaterAttackMove *a5 = new WaterAttackMove("CascadeCrush", "Attack", 40, 88);
+  WaterAttackMove *a6 = new WaterAttackMove("WhirlpoolStrike", "Attack", 45, 85);
+  WaterAttackMove *a7 = new WaterAttackMove("RainDanceBlitz", "Attack", 50, 82);
+  WaterAttackMove *a8 = new WaterAttackMove("AquaLance", "Attack", 55, 79);
+  WaterAttackMove *a9 = new WaterAttackMove("GeyserBlast", "Attack", 60, 76);
+  WaterAttackMove *a10 = new WaterAttackMove("OceanicRoar", "Attack", 65, 73);
   possibleAttacks.push_back(a1);
   possibleAttacks.push_back(a2);
   possibleAttacks.push_back(a3);

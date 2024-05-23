@@ -20,16 +20,16 @@ FirePokemon::FirePokemon(string names) { // Constructs a Fire Pokemon using rand
 
     // create list of possible moves 
     // possible attacks 
-    FireAttackMove* a1 = new FireAttackMove("BlazingComet", "Attack", 20, 80);
-    FireAttackMove* a2 = new FireAttackMove("InfernoBurst", "Attack", 25, 75);
-    FireAttackMove* a3 = new FireAttackMove("LavaSurge", "Attack", 30, 70);
-    FireAttackMove* a4 = new FireAttackMove("FlameVortex", "Attack", 35, 65);
-    FireAttackMove* a5 = new FireAttackMove("EmberStorm", "Attack", 40, 60);
-    FireAttackMove* a6 = new FireAttackMove("Pyroclasm", "Attack", 45, 55);
-    FireAttackMove* a7 = new FireAttackMove("ScorchingRay", "Attack", 50, 50);
-    FireAttackMove* a8 = new FireAttackMove("CinderStrike", "Attack", 55, 45);
-    FireAttackMove* a9 = new FireAttackMove("WildfireWave", "Attack", 60, 40);
-    FireAttackMove* a10 = new FireAttackMove("FlareBlitz", "Attack", 65, 35);
+    FireAttackMove* a1 = new FireAttackMove("BlazingComet", "Attack", 20, 100);
+    FireAttackMove* a2 = new FireAttackMove("InfernoBurst", "Attack", 25, 97);
+    FireAttackMove* a3 = new FireAttackMove("LavaSurge", "Attack", 30, 94);
+    FireAttackMove* a4 = new FireAttackMove("FlameVortex", "Attack", 35, 91);
+    FireAttackMove* a5 = new FireAttackMove("EmberStorm", "Attack", 40, 88);
+    FireAttackMove* a6 = new FireAttackMove("Pyroclasm", "Attack", 45, 85);
+    FireAttackMove* a7 = new FireAttackMove("ScorchingRay", "Attack", 50, 82);
+    FireAttackMove* a8 = new FireAttackMove("CinderStrike", "Attack", 55, 79);
+    FireAttackMove* a9 = new FireAttackMove("WildfireWave", "Attack", 60, 76);
+    FireAttackMove* a10 = new FireAttackMove("FlareBlitz", "Attack", 65, 73);
     possibleAttacks.push_back(a1);
     possibleAttacks.push_back(a2);
     possibleAttacks.push_back(a3);

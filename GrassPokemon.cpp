@@ -18,16 +18,16 @@ GrassPokemon::GrassPokemon(string names) // Constructs a Grass Pokemon using ran
 
   // create list of possible moves
   // possible attacks
-  GrassAttackMove *a1 = new GrassAttackMove("LeafSurge", "Attack", 20, 80);
-  GrassAttackMove *a2 = new GrassAttackMove("VineLash", "Attack", 25, 75);
-  GrassAttackMove *a3 = new GrassAttackMove("ChlorophyllBurst", "Attack", 30, 70);
-  GrassAttackMove *a4 = new GrassAttackMove("BriarBash", "Attack", 35, 65);
-  GrassAttackMove *a5 = new GrassAttackMove("PetalCyclone", "Attack", 40, 60);
-  GrassAttackMove *a6 = new GrassAttackMove("SapStrike", "Attack", 45, 55);
-  GrassAttackMove *a7 = new GrassAttackMove("RootSnare", "Attack", 50, 50);
-  GrassAttackMove *a8 = new GrassAttackMove("FernFury", "Attack", 55, 45);
-  GrassAttackMove *a9 = new GrassAttackMove("ThicketThrust", "Attack", 60, 40);
-  GrassAttackMove *a10 = new GrassAttackMove("MeadowMirage", "Attack", 65, 35);
+  GrassAttackMove *a1 = new GrassAttackMove("LeafSurge", "Attack", 20, 100);
+  GrassAttackMove *a2 = new GrassAttackMove("VineLash", "Attack", 25, 97);
+  GrassAttackMove *a3 = new GrassAttackMove("ChlorophyllBurst", "Attack", 30, 94);
+  GrassAttackMove *a4 = new GrassAttackMove("BriarBash", "Attack", 35, 91);
+  GrassAttackMove *a5 = new GrassAttackMove("PetalCyclone", "Attack", 40, 88);
+  GrassAttackMove *a6 = new GrassAttackMove("SapStrike", "Attack", 45, 85);
+  GrassAttackMove *a7 = new GrassAttackMove("RootSnare", "Attack", 50, 82);
+  GrassAttackMove *a8 = new GrassAttackMove("FernFury", "Attack", 55, 79);
+  GrassAttackMove *a9 = new GrassAttackMove("ThicketThrust", "Attack", 60, 76);
+  GrassAttackMove *a10 = new GrassAttackMove("MeadowMirage", "Attack", 65, 73);
   possibleAttacks.push_back(a1);
   possibleAttacks.push_back(a2);
   possibleAttacks.push_back(a3);

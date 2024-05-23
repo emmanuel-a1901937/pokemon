@@ -11,12 +11,11 @@ class DefendMove : public Move {
     int speedEffect; 
 
   public: 
-    DefendMove(string _name, string _type, int _attackEffect, int _defenceEffect, int _speedEffect);
-    string getName();
-    int getAttackEffect();
-    int getDefenceEffect();
-    int getSpeedEffect();
-    void f(); 
+    DefendMove(string _name, string _type, int _attackEffect, int _defenceEffect, int _speedEffect); // Instantiate DefendMove object
+    string getName(); // returns the name of the DefendMove
+    int getAttackEffect(); // returns the attackEffect attribute 
+    int getDefenceEffect(); // returns the defenceEffect attribute 
+    int getSpeedEffect(); // returns the speedEffect attribute 
 };
 
 #endif

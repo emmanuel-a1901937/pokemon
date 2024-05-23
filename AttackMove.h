@@ -10,8 +10,8 @@ class AttackMove : public Move {
     int accuracy; 
   
   public: 
-    int getDamage();
-    int getAccuracy();
+    int getDamage(); // Returns the AttackMove's damage attribute 
+    int getAccuracy(); // Returns the AttackMove's accuracy attribute 
 };
 
 #endif

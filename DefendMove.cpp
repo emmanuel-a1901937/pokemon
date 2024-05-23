@@ -23,5 +23,3 @@ int DefendMove::getDefenceEffect() {
 int DefendMove::getSpeedEffect() {
   return speedEffect; 
 }
-
-void DefendMove::f() {} // does nothing; needed for Move to be a virtual class 

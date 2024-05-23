@@ -7,9 +7,9 @@ using namespace std;
 class WaterAttackMove : public AttackMove {
   public: 
     WaterAttackMove(string _name, string _type, int _damage, int _accuracy);
-    string getName();
-    int getDamage();
-    int getAccuracy();
+    string getName(); // Returns name
+    int getDamage(); // Returns Damage attribute 
+    int getAccuracy(); // Returns Accuracy attribute 
 };
 
 #endif

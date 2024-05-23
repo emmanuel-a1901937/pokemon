@@ -23,12 +23,8 @@ void Game::run(){
     // Player wants to play the game (just let code run procedurally)
     case 1:
         break;
-    // Player wants to load a saved game
-    case 2:
-        loadGame();
-        break;
     // Player wants to exit the program
-    case 3:
+    case 2:
         return;
         break;
     }
@@ -119,10 +115,6 @@ void Game::playerTurn(){
             playerPokemon->useMove(s1, computerPokemon);
             break;
         }
-        case 5:
-            //save the game (how tf do i make this quit, do I need to?)
-            saveGame();
-            break;
     }
 
     //Computer pokemon has been attacked, if fainted, set next pokemon in party as active Pokemon
@@ -176,10 +168,6 @@ void Game::computerTurn(){
     player.setActivePokemon();
 }   
 
-void Game::saveGame(){}
-
-Game Game::loadGame(){}
-
 bool Game::gameOver(){
     // If all computer pokemon fainted, but player has some left, you win
     if(!player.partyFainted() && computer.partyFainted()){
@@ -203,8 +191,7 @@ void Game::displayMainMenu() {
     std::cout << "           Main Menu               " << std::endl;
     std::cout << "-----------------------------------" << std::endl;
     std::cout << "1. New Game" << std::endl;
-    std::cout << "2. Load Game" << std::endl;
-    std::cout << "3. Quit" << std::endl;
+    std::cout << "2. Quit" << std::endl;
     std::cout << "-----------------------------------" << std::endl;
     std::cout << "Please enter your choice: ";
 }
@@ -238,20 +225,21 @@ void Game::displayGameMenu() {
 
     // Third is a defense move
     std::cout << "3. " << moves[2]->getName() << " - Defense move" << std::endl;
-    std::cout << "Attack Effect: " << moves[2]->getAttackEffect() << std::endl; 
-    std::cout << "Defence Effect: " << moves[2]->getDefenceEffect() << std::endl; 
+    std::cout << "Attack Effect: " << moves[2]->getAttackEffect() << " "; 
+    std::cout << "Defence Effect: " << moves[2]->getDefenceEffect() << " "; 
     std::cout << "Speed Effect: " << moves[2]->getSpeedEffect() << std::endl; 
 
     // Fourth is a status move
     std::cout << "4. " << moves[3]->getName() << " - Status move" << std::endl;
-    std::cout << "Attack Effect: " << moves[3]->getAttackEffect() << std::endl; 
-    std::cout << "Defence Effect: " << moves[3]->getDefenceEffect() << std::endl; 
+    std::cout << "Attack Effect: " << moves[3]->getAttackEffect() << " ";
+    std::cout << "Defence Effect: " << moves[3]->getDefenceEffect() << " ";
     std::cout << "Speed Effect: " << moves[3]->getSpeedEffect() << std::endl; 
-
-    // Option to save and quit
-    std::cout << "5. Save and Quit" << std::endl;
 
     // Additional styling or prompts
     std::cout << "========================" << std::endl;
-    std::cout << "Choose an option (1-5): ";
+    std::cout << "Choose an option (1-4): ";
 }
+
+Computer Game::getComputer(){ return computer;}
+
+Trainer Game::getTrainer(){ return player;}

@@ -40,14 +40,14 @@ GrassPokemon::GrassPokemon(string names) // Constructs a Grass Pokemon using ran
   possibleAttacks.push_back(a10);
 
   // possible defence
-  DefendMove *d1 = new DefendMove("SharpenBlade", "Defend", 1.1, 0, 0);     // raises attack
-  DefendMove *d2 = new DefendMove("RaiseShield", "Defend", 0, 1.1, 0);      // raises defence
-  DefendMove *d3 = new DefendMove("QuickFeet", "Defend", 0, 0, 1.1);        // raises speed
-  DefendMove *d4 = new DefendMove("DualWield", "Defend", 1.2, 0.9, 0);      // highly raises attack, lowers defence
-  DefendMove *d5 = new DefendMove("DualShield", "Defend", 0.9, 1.2, 0);     // highly raises defence, lowers attack
-  DefendMove *d6 = new DefendMove("LightningBoots", "Defend", 0, 0.9, 1.2); // highly raises speed, lowers defence
-  DefendMove *d7 = new DefendMove("HeavyArmour", "Defend", 0, 1.2, 0.9);    // highly raises defence, lowers speed
-  DefendMove *d8 = new DefendMove("GreatWeapon", "Defend", 1.2, 0, 0.9);    // highly raises attack, lowers speed
+  DefendMove *d1 = new DefendMove("SharpenBlade", "Defend", 10, 0, 0);     // raises attack
+  DefendMove *d2 = new DefendMove("RaiseShield", "Defend", 0, 10, 0);      // raises defence
+  DefendMove *d3 = new DefendMove("QuickFeet", "Defend", 0, 0, 10);        // raises speed
+  DefendMove *d4 = new DefendMove("DualWield", "Defend", 20, -10, 0);      // highly raises attack, lowers defence
+  DefendMove *d5 = new DefendMove("DualShield", "Defend", -10, 20, 0);     // highly raises defence, lowers attack
+  DefendMove *d6 = new DefendMove("LightningBoots", "Defend", 0, -10, 20); // highly raises speed, lowers defence
+  DefendMove *d7 = new DefendMove("HeavyArmour", "Defend", 0, 20, -10);    // highly raises defence, lowers speed
+  DefendMove *d8 = new DefendMove("GreatWeapon", "Defend", 20, 0, -10);    // highly raises attack, lowers speed
   possibleDefense.push_back(d1);
   possibleDefense.push_back(d2);
   possibleDefense.push_back(d3);
@@ -58,14 +58,14 @@ GrassPokemon::GrassPokemon(string names) // Constructs a Grass Pokemon using ran
   possibleDefense.push_back(d8);
 
   // possible status
-  StatusMove *s1 = new StatusMove("BreakBlade", "Status", 0.9, 0, 0, 90);         // reduces attack
-  StatusMove *s2 = new StatusMove("ShieldBreaker", "Status", 0, 0.9, 0, 90);      // reduces defence
-  StatusMove *s3 = new StatusMove("StickyFeet", "Status", 0, 0, 0.9, 90);         // reduces speed
-  StatusMove *s4 = new StatusMove("Infatuate", "Status", 0.8, 1.1, 0, 90);        // reduces attack, ups defence
-  StatusMove *s5 = new StatusMove("Taunt", "Status", 1.1, 0.8, 0, 90);            // reduces defence, ups attack
-  StatusMove *s6 = new StatusMove("IronBoots", "Status", 0, 1.1, 0.8, 90);        // reduces speed, ups defence
-  StatusMove *s7 = new StatusMove("SlipperySlippers", "Status", 0, 0.8, 1.1, 90); // reduces defence, ups speed
-  StatusMove *s8 = new StatusMove("LilKnives", "Status", 0.8, 0, 1.1, 90);        // reduces attack, ups speed
+  StatusMove *s1 = new StatusMove("BreakBlade", "Status", -10, 0, 0, 90);        // reduces attack
+  StatusMove *s2 = new StatusMove("ShieldBreaker", "Status", 0, -10, 0, 90);     // reduces defence
+  StatusMove *s3 = new StatusMove("StickyFeet", "Status", 0, 0, -10, 90);        // reduces speed
+  StatusMove *s4 = new StatusMove("Infatuate", "Status", -20, 10, 0, 90);        // reduces attack, ups defence
+  StatusMove *s5 = new StatusMove("Taunt", "Status", 10, -20, 0, 90);            // reduces defence, ups attack
+  StatusMove *s6 = new StatusMove("IronBoots", "Status", 0, 10, -20, 90);        // reduces speed, ups defence
+  StatusMove *s7 = new StatusMove("SlipperySlippers", "Status", 0, -20, 10, 90); // reduces defence, ups speed
+  StatusMove *s8 = new StatusMove("LilKnives", "Status", -20, 0, 10, 90);        // reduces attack, ups speed
   possibleStatus.push_back(s1);
   possibleStatus.push_back(s2);
   possibleStatus.push_back(s3);
@@ -183,7 +183,7 @@ void GrassPokemon::useDefend(Move *move)
   // apply Attack effect
   if (move->getAttackEffect() != 0)
   {                                                         // if there is a change in Attack stat
-    int newAttack = this->attack * move->getAttackEffect(); // calculate new Attack stat
+    int newAttack = this->attack + move->getAttackEffect(); // calculate new Attack stat
     if (newAttack > 0)
     {                                                                                                                                  // if newAttack is above 0
       setAttack(newAttack);                                                                                                            // update Attack stat
@@ -199,7 +199,7 @@ void GrassPokemon::useDefend(Move *move)
   // apply Defence effect
   if (move->getDefenceEffect() != 0)
   {                                                            // if there is a change in Defence stat
-    int newDefence = this->defence * move->getDefenceEffect(); // calculate new Defence stat
+    int newDefence = this->defence + move->getDefenceEffect(); // calculate new Defence stat
     if (newDefence > 0)
     {                                                                                                                                      // if newDefence is above 0
       setDefence(newDefence);                                                                                                              // update Defence stat
@@ -215,7 +215,7 @@ void GrassPokemon::useDefend(Move *move)
   // apply Speed effect
   if (move->getSpeedEffect() != 0)
   {                                                      // if there is a change in Speed stat
-    int newSpeed = this->speed * move->getSpeedEffect(); // calculate new Speed stat
+    int newSpeed = this->speed + move->getSpeedEffect(); // calculate new Speed stat
     if (newSpeed > 0)
     {                                                                                                                              // if newSpeed is above 0
       setSpeed(newSpeed);                                                                                                          // update Speed stat
@@ -243,7 +243,7 @@ void GrassPokemon::useStatus(Move *move, Pokemon *targetPokemon)
     // apply Attack effect
     if (move->getAttackEffect() != 0)
     {                                                                       // if there is a change in Attack stat
-      int newAttack = targetPokemon->getAttack() * move->getAttackEffect(); // calculate new Attack stat
+      int newAttack = targetPokemon->getAttack() + move->getAttackEffect(); // calculate new Attack stat
       if (newAttack > 0)
       {                                                                                                                                                                    // ensure newAttack is above 0
         targetPokemon->setAttack(newAttack);                                                                                                                               // update Attack stat
@@ -259,7 +259,7 @@ void GrassPokemon::useStatus(Move *move, Pokemon *targetPokemon)
     // apply Defence effect
     if (move->getDefenceEffect() != 0)
     {
-      int newDefence = targetPokemon->getDefence() * move->getDefenceEffect(); // calculate new Defence stat
+      int newDefence = targetPokemon->getDefence() + move->getDefenceEffect(); // calculate new Defence stat
       if (newDefence > 0)
       {                                                                                                                                                                        // if newDefence is above 0
         targetPokemon->setDefence(newDefence);                                                                                                                                 // update Defence stat
@@ -275,7 +275,7 @@ void GrassPokemon::useStatus(Move *move, Pokemon *targetPokemon)
     // apply Speed effect
     if (move->getSpeedEffect() != 0)
     {
-      int newSpeed = targetPokemon->getSpeed() * move->getSpeedEffect(); // calculate new Speed stat
+      int newSpeed = targetPokemon->getSpeed() + move->getSpeedEffect(); // calculate new Speed stat
       if (newSpeed > 0)
       {                                                                                                                                                                // if newSpeed is above 0
         targetPokemon->setSpeed(newSpeed);                                                                                                                             // update Speed stat

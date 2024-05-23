@@ -18,14 +18,14 @@ int Move::getAccuracy() {
 }
 
 // DefendMove and StatusMove child functions
-float Move::getAttackEffect() {
+int Move::getAttackEffect() {
   return -1; 
 }
 
-float Move::getDefenceEffect() {
+int Move::getDefenceEffect() {
   return -1; 
 }
 
-float Move::getSpeedEffect() {
+int Move::getSpeedEffect() {
   return -1; 
 }

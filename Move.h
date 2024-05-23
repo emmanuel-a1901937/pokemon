@@ -19,9 +19,9 @@ class Move {
     virtual int getAccuracy(); // note: also a StatusMove child function 
 
     // DefendMove and StatusMove child functions
-    virtual float getAttackEffect();
-    virtual float getDefenceEffect();
-    virtual float getSpeedEffect();
+    virtual int getAttackEffect();
+    virtual int getDefenceEffect();
+    virtual int getSpeedEffect();
 };
 
 #endif

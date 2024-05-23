@@ -6,17 +6,17 @@ using namespace std;
 
 class StatusMove : public Move {
   protected: 
-    float attackEffect; 
-    float defenceEffect; 
-    float speedEffect; 
+    int attackEffect; 
+    int defenceEffect; 
+    int speedEffect; 
     int accuracy; 
 
   public: 
-    StatusMove(string _name, string _type, float _attackEffect, float _defenceEffect, float _speedEffect, int _accuracy);
+    StatusMove(string _name, string _type, int _attackEffect, int _defenceEffect, int _speedEffect, int _accuracy);
     string getName();
-    float getAttackEffect();
-    float getDefenceEffect();
-    float getSpeedEffect();
+    int getAttackEffect();
+    int getDefenceEffect();
+    int getSpeedEffect();
     int getAccuracy();
     void f(); 
 };

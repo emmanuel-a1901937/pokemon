@@ -1,6 +1,6 @@
 #include "StatusMove.h"
 
-StatusMove::StatusMove(string _name, string _type, int _attackEffect, int _defenceEffect, int _speedEffect, int _accuracy) {
+StatusMove::StatusMove(string _name, string _type, float _attackEffect, float _defenceEffect, float _speedEffect, int _accuracy) {
   name = _name; 
   type = _type; 
   attackEffect = _attackEffect; 
@@ -13,15 +13,15 @@ string StatusMove::getName() {
   return name; 
 }
 
-int StatusMove::getAttackEffect() {
+float StatusMove::getAttackEffect() {
   return attackEffect; 
 }
 
-int StatusMove::getDefenceEffect() {
+float StatusMove::getDefenceEffect() {
   return defenceEffect; 
 }
 
-int StatusMove::getSpeedEffect() {
+float StatusMove::getSpeedEffect() {
   return speedEffect; 
 }
 

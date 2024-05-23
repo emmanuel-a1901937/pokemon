@@ -225,13 +225,13 @@ void Game::displayGameMenu() {
 
     // Third is a defense move
     std::cout << "3. " << moves[2]->getName() << " - Defense move" << std::endl;
-    std::cout << "Attack Effect: " << moves[2]->getAttackEffect() << " "; 
+    std::cout << "   Attack Effect: " << moves[2]->getAttackEffect() << " "; 
     std::cout << "Defence Effect: " << moves[2]->getDefenceEffect() << " "; 
     std::cout << "Speed Effect: " << moves[2]->getSpeedEffect() << std::endl; 
 
     // Fourth is a status move
     std::cout << "4. " << moves[3]->getName() << " - Status move" << std::endl;
-    std::cout << "Attack Effect: " << moves[3]->getAttackEffect() << " ";
+    std::cout << "   Attack Effect: " << moves[3]->getAttackEffect() << " ";
     std::cout << "Defence Effect: " << moves[3]->getDefenceEffect() << " ";
     std::cout << "Speed Effect: " << moves[3]->getSpeedEffect() << std::endl; 
 

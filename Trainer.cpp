@@ -111,7 +111,7 @@ bool Trainer::confirmPokemon() {
 
     // Ask the player if they are happy with their choice
     std::cout << "Are you happy with your choice? (1 = yes, 2 = no): ";
-    
+
     // While loop to ensure that only 1 or 2 can be input
       while (!(std::cin >> choice) || (choice != 1 && choice != 2)) {
         std::cout << "Invalid choice, please enter 1 for yes or 2 for no: ";
@@ -167,4 +167,12 @@ bool Trainer::partyFainted(){
     }
     // If all have fainted return true
     return true;
+}
+
+Trainer::~Trainer(){
+    delete activePokemon;
+    for (int i = 0; i < 3; i++){
+        delete party[i];
+    }
+    party.clear();
 }

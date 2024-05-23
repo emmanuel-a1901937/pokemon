@@ -24,6 +24,7 @@ class Trainer{
         Pokemon* getActivePokemon();
         // check if every pokemon in the party has fainted
         bool partyFainted();
+        virtual ~Trainer();
 };
 
 

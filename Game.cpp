@@ -32,8 +32,12 @@ void Game::run(){
     // Allow the player to choose their pokemon (see function for more details)
     initialise();
 
+    round = 1;
+
     // Main game loop, runs until one party has no more un-fainted pokemon
     while (!player.partyFainted() && !computer.partyFainted()) {
+
+        std::cout << "Round " << round << std::endl;
 
         // If the player's pokemon's speed is greater or same as the computer's, player goes first
         if (player.getActivePokemon()->getSpeed() >= computer.getActivePokemon()->getSpeed()) {
@@ -52,6 +56,7 @@ void Game::run(){
             playerTurn();
             if (gameOver()) break;
         }
+        round++;
     }
 }
 
@@ -126,6 +131,10 @@ void Game::computerTurn(){
     Pokemon* playerPokemon = player.getActivePokemon(); 
     Pokemon* computerPokemon = computer.getActivePokemon(); 
 
+    std::cout << "========================" << std::endl;
+    std::cout << "      Computer Move!    " << std::endl;
+    std::cout << "========================" << std::endl;
+
     // Seed the randomness based on the current time
     srand(time(0));
 
@@ -164,6 +173,8 @@ void Game::computerTurn(){
         }
     }
 
+    std::cout << "========================" << std::endl;
+
     //Player pokemon has been attacked, if fainted, set next pokemon in party as active Pokemon
     player.setActivePokemon();
 }   
@@ -199,7 +210,7 @@ void Game::displayMainMenu() {
 void Game::displayGameMenu() {
     // Display a header or a title for the game menu
     std::cout << "========================" << std::endl;
-    std::cout << "         Your Move!        " << std::endl;
+    std::cout << "        Your Move!      " << std::endl;
     std::cout << "========================" << std::endl;
 
     // Display player's Pokemon's name and health
@@ -207,6 +218,7 @@ void Game::displayGameMenu() {
     std::cout << "Your active Pokemon: " << activePokemon->getName() << std::endl;
     std::cout << "Health: " << activePokemon->getHealth() << std::endl;
     std::cout << "Type: " << activePokemon->getType() << std::endl;
+    std::cout << "\n";
 
     // Display computer's Pokemon's name and health
     Pokemon* computerPokemon = computer.getActivePokemon();
@@ -219,17 +231,20 @@ void Game::displayGameMenu() {
 
     // First two are attacking moves
     for (int i = 0; i < 2; i++) {
+        std::cout << "\n";
         std::cout << i + 1 << ". " << moves[i]->getName() << std::endl;
         std::cout << "   Attack Rating: " << moves[i]->getDamage() << " | Accuracy: " << moves[i]->getAccuracy() << std::endl;
     }
 
     // Third is a defense move
+    std::cout << "\n";
     std::cout << "3. " << moves[2]->getName() << " - Defense move" << std::endl;
     std::cout << "   Attack Effect: " << moves[2]->getAttackEffect() << " "; 
     std::cout << "Defence Effect: " << moves[2]->getDefenceEffect() << " "; 
     std::cout << "Speed Effect: " << moves[2]->getSpeedEffect() << std::endl; 
 
     // Fourth is a status move
+    std::cout << "\n";
     std::cout << "4. " << moves[3]->getName() << " - Status move" << std::endl;
     std::cout << "   Attack Effect: " << moves[3]->getAttackEffect() << " ";
     std::cout << "Defence Effect: " << moves[3]->getDefenceEffect() << " ";

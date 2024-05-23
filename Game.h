@@ -8,6 +8,7 @@ class Game{
     protected:
         Trainer player;
         Computer computer;
+        int round;
     public:
         void run();
         void initialise();

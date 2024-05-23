@@ -21,6 +21,7 @@ void Pokemon::takeDamage(int damage){
     if (currentHealth <= 0) {
         currentHealth = 0;
         fainted = true;
+        cout << name << " Fainted!" << endl;
     }
 }
 

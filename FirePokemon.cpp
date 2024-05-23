@@ -151,8 +151,8 @@ void FirePokemon::useAttack(Move* move, Pokemon* targetPokemon) { // protected f
         float targetPokemonDefenceStat = targetPokemon->getDefence(); 
         int totalDamage = (attackPower * (actingPokemonAttackStat/targetPokemonDefenceStat)) * bonus; 
 
-        targetPokemon->takeDamage(totalDamage); // reduce p2 health 
-        cout << this->name << " successfully dealt " << totalDamage <<  " damage to " << targetPokemon->getName() << endl; // print successful attack message 
+        cout << this->name << " successfully dealt " << totalDamage << " damage to " << targetPokemon->getName() << endl; // print successful attack message
+        targetPokemon->takeDamage(totalDamage);                                                                           // reduce p2 health
       } 
       
       else { // if attack does not hit (based on randomNumber)

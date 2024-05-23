@@ -220,7 +220,7 @@ void Game::displayGameMenu() {
     // First two are attacking moves
     for (int i = 0; i < 2; i++) {
         std::cout << i + 1 << ". " << moves[i]->getName() << std::endl;
-        std::cout << "   Damage: " << moves[i]->getDamage() << " | Accuracy: " << moves[i]->getAccuracy() << std::endl;
+        std::cout << "   Attack Rating: " << moves[i]->getDamage() << " | Accuracy: " << moves[i]->getAccuracy() << std::endl;
     }
 
     // Third is a defense move

@@ -6,13 +6,9 @@ WaterStatusMove etc. were unnecessary.
 
 Date: 17/05/20204
 Change: Moved “useMove” function from Move child classes to Pokemon child classes.
-Description: The “useMove” function originally in the Move child classes required Pokemon.h to be included in Move.h. 
-However, Move.h must also be included in Pokemon.h to store a Pokemon object’s selection of Attack, Defend, and Status 
-Moves. This cross-dependency resulted in the code being unable to compile. To solve this, the “useMove” function was 
-moved to the Pokemon child classes. This new “useMove” function takes 2 parameters: Move* move and Pokemon* targetPokemon. 
-Depending on the type of the Move* object passed into the function, it will call the appropriate functions of the Move* 
-object (e.g., AttackMove objects will have attack-related function calls). The Move parent class will have virtual 
-functions to call each of its possible child class functions. 
+Description: The "useMove" function was moved from Move to Pokemon classes to resolve cross-dependency issues
+between Pokemon.h and Move.h. It now takes Move* and Pokemon* parameters, calling appropriate functions based 
+on the move type.
 
 
 Date: 18/05/2024

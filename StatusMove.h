@@ -12,13 +12,12 @@ class StatusMove : public Move {
     int accuracy; 
 
   public: 
-    StatusMove(string _name, string _type, int _attackEffect, int _defenceEffect, int _speedEffect, int _accuracy);
-    string getName();
-    int getAttackEffect();
-    int getDefenceEffect();
-    int getSpeedEffect();
-    int getAccuracy();
-    void f(); 
+    StatusMove(string _name, string _type, int _attackEffect, int _defenceEffect, int _speedEffect, int _accuracy); // Initialize StatusMove object 
+    string getName(); // Returns name attribute
+    int getAttackEffect(); // Returns attackEffect attribute 
+    int getDefenceEffect(); // Returns defenceEffect attribute 
+    int getSpeedEffect(); // Returns speedEffect attribute 
+    int getAccuracy(); // Returns accuracy attribute 
 };
 
 #endif

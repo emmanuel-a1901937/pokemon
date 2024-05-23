@@ -28,5 +28,3 @@ int StatusMove::getSpeedEffect() {
 int StatusMove::getAccuracy() {
   return accuracy; 
 }
-
-void StatusMove::f() {} // does nothing; needed for Move to be a virtual class 

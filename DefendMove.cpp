@@ -1,6 +1,6 @@
 #include "DefendMove.h"
 
-DefendMove::DefendMove(string _name, string _type, int _attackEffect, int _defenceEffect, int _speedEffect) {
+DefendMove::DefendMove(string _name, string _type, float _attackEffect, float _defenceEffect, float _speedEffect) {
   name = _name; 
   type = _type; 
   attackEffect = _attackEffect; 
@@ -12,15 +12,15 @@ string DefendMove::getName() {
   return name; 
 }
 
-int DefendMove::getAttackEffect() {
+float DefendMove::getAttackEffect() {
   return attackEffect; 
 }
 
-int DefendMove::getDefenceEffect() {
+float DefendMove::getDefenceEffect() {
   return defenceEffect; 
 }
 
-int DefendMove::getSpeedEffect() {
+float DefendMove::getSpeedEffect() {
   return speedEffect; 
 }
 

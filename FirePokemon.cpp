@@ -256,3 +256,12 @@ void FirePokemon::useStatus(Move* move, Pokemon* targetPokemon) {
     cout << name << "'s Status Move was ineffective!" << endl; 
     }
 }
+
+FirePokemon::~FirePokemon() {
+  possibleAttacks.clear(); 
+  possibleAttacks.shrink_to_fit(); 
+  possibleDefense.clear(); 
+  possibleDefense.shrink_to_fit(); 
+  possibleStatus.clear(); 
+  possibleStatus.shrink_to_fit(); 
+}

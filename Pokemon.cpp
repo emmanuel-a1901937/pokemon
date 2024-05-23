@@ -55,3 +55,8 @@ string Pokemon::getType() {
 bool Pokemon::isFainted() {
     return fainted;
 }
+
+Pokemon::~Pokemon() {
+    moves.clear(); // deallocates memory used to store its 4 moves 
+    moves.shrink_to_fit(); 
+}

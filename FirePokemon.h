@@ -21,6 +21,7 @@ class FirePokemon : public Pokemon {
     FirePokemon(string names);
     void setMoves(); // Sets the pokemons moves from a the vector of available moves
     void useMove(Move* move, Pokemon* targetPokemon); // Uses a move from a pokemons list of assigned moves on a specific pokemon.
+    ~FirePokemon(); 
 };
 
 #endif

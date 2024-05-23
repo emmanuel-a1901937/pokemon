@@ -31,6 +31,7 @@ class Pokemon{
         std::string getType(); 
         bool isFainted(); 
         virtual void useMove(Move* move, Pokemon* targetPokemon) = 0; 
+        virtual ~Pokemon(); 
 };
 
 

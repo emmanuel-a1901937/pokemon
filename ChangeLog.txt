@@ -1,0 +1,38 @@
+Date: 13/05/2024
+Change: Changed class hierarchy structure for StatusMove and DefenceMove classes.
+Description: StatusMove and DefenceMove no longer have child classes. Since StatusMove and DefenceMove 
+behaviors do not depend on the Pokemon object’s Type attribute, the type-based child classes of FireStatusMove, 
+WaterStatusMove etc. were unnecessary.
+
+Date: 17/05/20204
+Change: Moved “useMove” function from Move child classes to Pokemon child classes.
+Description: The “useMove” function originally in the Move child classes required Pokemon.h to be included in Move.h. 
+However, Move.h must also be included in Pokemon.h to store a Pokemon object’s selection of Attack, Defend, and Status 
+Moves. This cross-dependency resulted in the code being unable to compile. To solve this, the “useMove” function was 
+moved to the Pokemon child classes. This new “useMove” function takes 2 parameters: Move* move and Pokemon* targetPokemon. 
+Depending on the type of the Move* object passed into the function, it will call the appropriate functions of the Move* 
+object (e.g., AttackMove objects will have attack-related function calls). The Move parent class will have virtual 
+functions to call each of its possible child class functions. 
+
+
+Date: 18/05/2024
+Change: Removed newRound() from Game class
+Description: newRound was unnecessary and complicated breaking the while loop in run() when the game was over. 
+Its functionality was moved to the run() function.
+
+Date: 18/05/2024
+Change: Added partyFainted() to Trainer class
+Description: Needed a way to check if the entire party of the trainer or computer had fainted to check if the game had 
+ended.
+
+Date: 19/05/2024
+Change: Removed addPokemon(), removePokemon() & confirmParty() from Computer class
+Description: Weren’t implemented any differently to parent class, so unnecessary to overwrite
+
+Date: 19/05/2024
+Change: Removed Player class
+Description: Unnecessary as didn’t do anything different to Trainer class and as such were passed down by inheritance
+
+Date: 23/05/2024
+Change: Removed saveGame() & loadGame() from Game Class
+Description: SaveGame() & loadGame() implementation wasn't working and caused the program to crash, as such was removed.

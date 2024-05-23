@@ -6,7 +6,7 @@ using namespace std;
 
 class FireAttackMove : public AttackMove {
   public: 
-    FireAttackMove(string _name, string _type, int _damage, int _accuracy); 
+    FireAttackMove(string _name, string _type, int _damage, int _accuracy); //Constructor to initialise object
     int getDamage(); // Returns the damage attribute 
     int getAccuracy(); // Returns the accuracy attribute 
 };

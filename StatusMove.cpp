@@ -1,6 +1,7 @@
 #include "StatusMove.h"
 
 StatusMove::StatusMove(string _name, string _type, int _attackEffect, int _defenceEffect, int _speedEffect, int _accuracy) {
+  // Writing input to appropriate variables
   name = _name; 
   type = _type; 
   attackEffect = _attackEffect; 

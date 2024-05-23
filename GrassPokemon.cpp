@@ -295,12 +295,16 @@ void GrassPokemon::useStatus(Move *move, Pokemon *targetPokemon)
   }
 }
 
-GrassPokemon::~GrassPokemon()
-{
-  possibleAttacks.clear();
-  possibleAttacks.shrink_to_fit();
+GrassPokemon::~GrassPokemon(){
+  for (int i = 0; i < 8; i++){
+    delete possibleStatus[i];
+    delete possibleDefense[i];
+  }
   possibleDefense.clear();
-  possibleDefense.shrink_to_fit();
-  possibleStatus.clear();
-  possibleStatus.shrink_to_fit();
+  possibleStatus.clear(); 
+
+  for (int i = 0; i < 10; i++){
+    delete possibleAttacks[i];
+  }
+  possibleAttacks.clear();
 }

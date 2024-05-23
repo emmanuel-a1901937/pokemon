@@ -262,6 +262,8 @@ void Game::displayGameMenu() {
     std::cout << "Choose an option (1-4): ";
 }
 
+// Return computer for access outside class (only for testing)
 Computer Game::getComputer(){ return computer;}
 
+// Return trainer for access outside class (only for testing)
 Trainer Game::getTrainer(){ return player;}

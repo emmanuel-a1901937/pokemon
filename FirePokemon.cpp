@@ -258,10 +258,15 @@ void FirePokemon::useStatus(Move* move, Pokemon* targetPokemon) {
 }
 
 FirePokemon::~FirePokemon() {
-  possibleAttacks.clear(); 
-  possibleAttacks.shrink_to_fit(); 
-  possibleDefense.clear(); 
-  possibleDefense.shrink_to_fit(); 
+  for (int i = 0; i < 8; i++){
+    delete possibleStatus[i];
+    delete possibleDefense[i];
+  }
+  possibleDefense.clear();
   possibleStatus.clear(); 
-  possibleStatus.shrink_to_fit(); 
+
+  for (int i = 0; i < 10; i++){
+    delete possibleAttacks[i];
+  }
+  possibleAttacks.clear();
 }

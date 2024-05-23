@@ -1,9 +1,11 @@
 #include "AttackMove.h"
 
+// return damage for access outside class
 int AttackMove::getDamage() {
-  return -1; 
+  return damage; 
 }
 
+// return accuracy for access outside class
 int AttackMove::getAccuracy() {
-  return -1; 
+  return accuracy; 
 }

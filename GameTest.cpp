@@ -19,9 +19,11 @@ void GameTest::testPlayerTurn(){
 }
 
 void GameTest::testGameOver(){
+    // When testing, will have no fainted Pokemon, so if returns false, program worked as expected
     if (!game.gameOver()){
         std::cout << "Program worked as expected (3)" << std::endl;
     }
+    // If returns true, didn't work properly
     else{
         std::cout << "Program didn't work as expected (3)" << std::endl;
     }
@@ -29,5 +31,5 @@ void GameTest::testGameOver(){
 }
 
 void GameTest::testComputerTurn() {
-    game.computerTurn(); 
+    game.computerTurn(); //Run the computerTurn function for testing
 }

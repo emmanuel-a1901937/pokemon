@@ -7,7 +7,7 @@ class ComputerTest{
     private:
         Computer computer;
     public:
-        // Test the initialisation of a 
+        // Test the initialisation of computer object
         void testInitialisation();
 };
 

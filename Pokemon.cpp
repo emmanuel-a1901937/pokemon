@@ -58,6 +58,8 @@ bool Pokemon::isFainted() {
 }
 
 Pokemon::~Pokemon() {
+    for (int i = 0; i < 4; i++){
+        delete moves[i];
+    }
     moves.clear(); // deallocates memory used to store its 4 moves 
-    moves.shrink_to_fit(); 
 }

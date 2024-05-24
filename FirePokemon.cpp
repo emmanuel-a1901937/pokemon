@@ -11,7 +11,7 @@ FirePokemon::FirePokemon(string names) { // Constructs a Fire Pokemon using rand
     srand(time(0));
     name = names;
     type = "Fire";
-    maxHealth = rand() % 101 + 100;  //These are just random values as placeholders, feel free to change
+    maxHealth = rand() % 41 + 100;  //These are just random values as placeholders, feel free to change
     currentHealth = maxHealth;
     attack = rand() % 21 + 70;
     defence = rand() % 21 + 70;

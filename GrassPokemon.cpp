@@ -9,7 +9,7 @@ GrassPokemon::GrassPokemon(string names) // Constructs a Grass Pokemon using ran
   srand(time(0));
   name = names;
   type = "Grass";
-  maxHealth = rand() % 101 + 100; // These are just random values as placeholders, feel free to change
+  maxHealth = rand() % 41 + 100; // These are just random values as placeholders, feel free to change
   currentHealth = maxHealth;
   attack = rand() % 21 + 70;
   defence = rand() % 21 + 70;

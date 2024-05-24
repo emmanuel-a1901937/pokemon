@@ -19,8 +19,8 @@ void Game::run(){
     int choice;
     while (!(std::cin >> choice) || (choice != 1 && choice != 2)) {
         std::cout << "Invalid choice, please enter 1 for new game, or 2 to quit: ";
-        std::cin.clear(); 
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); 
+        std::cin.clear(); // clear error flags
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // clear input up to newline
     }
 
     switch (choice){
@@ -203,7 +203,7 @@ bool Game::gameOver(){
 // Display all the choices to the player
 void Game::displayMainMenu() {
     std::cout << "===================================" << std::endl;
-    std::cout << "       Welcome to Pokemon: Knockoff!       " << std::endl;
+    std::cout << "   Welcome to Pokemon: Knockoff!   " << std::endl;
     std::cout << "===================================" << std::endl;
     std::cout << "           Main Menu               " << std::endl;
     std::cout << "-----------------------------------" << std::endl;
